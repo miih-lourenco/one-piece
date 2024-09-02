@@ -1,0 +1,76 @@
+/*
+ *
+ * INSTRUCTIONS
+ *
+ * Copy the Legal Disclaimer and the @font-faces statements to your regular CSS file.
+ * The fonts folder(s) should be placed relative to the regular CSS file.
+ *
+ */
+
+@font-face {
+  font-family: "EFCircular";
+  src: url("./EFCircular/Light.woff2") format("woff2"),
+       url("./EFCircular/Light.woff") format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "EFCircular";
+  src: url("./EFCircular/LightItalic.woff2") format("woff2"),
+       url("./EFCircular/LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "EFCircular";
+  src: url("./EFCircular/Book.woff2") format("woff2"),
+       url("./EFCircular/Book.woff") format("woff");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "EFCircular";
+  src: url("./EFCircular/BookItalic.woff2") format("woff2"),
+       url("./EFCircular/BookItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "EFCircular";
+  src: url("./EFCircular/Medium.woff2") format("woff2"),
+       url("./EFCircular/Medium.woff") format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "EFCircular";
+  src: url("./EFCircular/MediumItalic.woff2") format("woff2"),
+       url("./EFCircular/MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "EFCircular";
+  src: url("./EFCircular/Bold.woff2") format("woff2"),
+       url("./EFCircular/Bold.woff") format("woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "EFCircular";
+  src: url("./EFCircular/BoldItalic.woff2") format("woff2"),
+       url("./EFCircular/BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "EFCircular";
+  src: url("./EFCircular/Black.woff2") format("woff2"),
+       url("./EFCircular/Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}

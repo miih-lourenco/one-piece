@@ -1,0 +1,2197 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html class="ets-dark mejs-fullscreen" style="overflow: hidden;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Latest IE, Enable Chrome frame, and require ActiveX(flash) in Windows UI mode IE10 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, requiresActiveX=true, chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="referrer" content="unsafe-url">
+		<meta name="referrer" content="always">
+		
+		<title>EF</title>
+
+		<!-- gudstrap -->
+		<link rel="stylesheet" type="text/css" href="./gudstrap.css">
+
+		
+		<link rel="stylesheet" type="text/css" href="./EFCircular.css" media="all">
+		<link rel="stylesheet" type="text/css" href="./ets-global.min.css" media="all">
+		<link rel="stylesheet" type="text/css" href="./ets-act-main.min.css" media="all">
+		<link rel="stylesheet" type="text/css" href="./ets-acc-main.min.css" media="all">
+		<link rel="stylesheet" type="text/css" href="./ets-sp-main.min.css" media="all">
+		
+
+		<link rel="stylesheet" type="text/css" href="./tck-main.min.css" media="all">
+		<!-- tooltips-ui -->
+
+		<!-- mediaelement css, some rules may be overridden by school-ui-shared -->
+		<link rel="stylesheet" type="text/css" href="./mediaelementplayer.min.css" media="all">
+		<!--shared libs css-->
+		<link rel="stylesheet" type="text/css" href="./jquery.fancybox.css" media="all">
+		<link rel="stylesheet" type="text/css" href="./jquery.fancybox(1).css" media="all">
+		<link rel="stylesheet" type="text/css" href="./jquery.mCustomScrollbar.css">
+
+		
+		<link rel="stylesheet" type="text/css" href="./main.min.css">
+		
+
+		
+
+		
+
+<script type="application/json" id="endpoints--env-config">{
+  "accountService": "/api/account/v1/accounts",
+  "asrEvalzipPathPrefix": "/api/legacy-school/asr/handlers",
+  "asrLog": "/api/legacy-school/services/school/courseware/LogAsrTracking.ashx",
+  "exportPdfUrl": "/api/school-proxy/v1/commands/export/pdf",
+  "queryproxy": "/api/school-proxy/v1/troop",
+  "certUrl": "/iframed-study/certificate?key=",
+  "headerfooter": {
+    "headersettings": "/api/header-settings/v1/services/shared/headersetting",
+    "headerprofile": "/api/header-settings/v1/community/widgets/headerprofile",
+    "schoolMenuTop": "/api/header-settings/v1/school/menu/top",
+    "schoolMenuAll": "/api/header-settings/v1/school/menu/all",
+    "communityMenuLoad": "/api/header-settings/v1/community/menu/load",
+    "changeLanguage": "/api/header-settings/v1/services/shared/context/changelanguage"
+  },
+  "placementTest": {
+    "initTest": "/api/school-proxy/v1/placement-test/init",
+    "testData": "/api/school-proxy/v1/placement-test"
+  },
+  "levelTest": {
+    "startTest": "/api/school-proxy/v1/commands/leveltest/start",
+    "submitSectionScore": "/api/school-proxy/v1/commands/leveltest/submitscore"
+  },
+  "account": "/api/account/v1/accounts",
+  "enrollment": "/api/enrollment/v1/enrollments",
+  "commerceBase": "/api/commerce-gateway",
+  "commerce": {
+    "member": "/api/commerce-gateway/member",
+    "studentType": "/api/commerce-gateway/member/student-type",
+    "subscription": "/api/commerce-gateway/member/subscription",
+    "order": {
+      "search": "/api/commerce-gateway/order/search"
+    },
+    "account": "/api/commerce-gateway/account"
+  },
+  "student": {
+    "settings": "/api/student-settings/v1/student/settings"
+  }
+}
+</script>
+<script type="application/json" id="paths--env-config">{
+  "placementTest": "/study/test/placementtest/",
+  "bookNewPL40Class": "/classes/pl",
+  "bookNewPL20Class": "/classes/pl?type=PL20",
+  "bookNewCP20Class": "/study/studyplan#study/",
+  "changeCourse": "/change-course",
+  "evcDownloadApp": "/classes/ef-classroom-app-download",
+  "evcMybookings": "/classes/mybookings",
+  "evcRoom": "/iframed-classes/room",
+  "evcMobileBooking": "/evc-mobile/booking",
+  "evcMobileListing": "/evc-mobile/booking",
+  "groupClass": "/classes/gl",
+  "myBookings": "/classes/mybookings?icid=PL_enter",
+  "progressGoals": "/progress-goals",
+  "studyPlan": "/study/studyplan",
+  "levelTest": "/study/leveltest",
+  "enrollment": "/onboarding",
+  "uiRedirect": "/",
+  "efset30": "/efset30",
+  "helpCenterUrl": "https://support.corporate.ef.com/s/login?startURL=/s/&region=other"
+}
+</script>
+<script type="application/json" id="platformAuth--env-config">{
+  "queryproxy": {
+    "endpoint": "/api/school-proxy/v1/troop"
+  },
+  "prioritizeTokensFromHash": true
+}
+</script>
+
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="get-env-config" src="./index.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-1.0" data-requiremodule="jquery" src="./jquery.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-1.0" data-requiremodule="poly" src="./poly-bundle.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-1.0" data-requiremodule="troopjs-bundle" src="./troopjs-bundle.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-1.0" data-requiremodule="troopjs-ef" src="./nodeps.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="poly" src="./poly-bundle.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="lodash" src="./lodash.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="troopjs-bundle" src="./maxi.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="troopjs-ef" src="./nodeps(1).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="when" src="./when-bundle.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-1.0" data-requiremodule="school-ui-shared" src="./app-built.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-1.0" data-requiremodule="tooltips-ui" src="./app-built.min(1).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-1.0" data-requiremodule="when" src="./when-bundle.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="b2b-fe-auth" src="./index(1).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-1.0" data-requiremodule="client-tracking" src="./bundle-troopjs.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-1.0" data-requiremodule="Cookies" src="./cookies.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="jquery" src="./jquery-1.9.1.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="school-ui-shared/utils/browser-check" src="./browser-check.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="livechat-ui" src="./app-built.min(2).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="techcheck-ui" src="./app-built.min(3).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="school-ui-activity" src="./app-built.min(4).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="school-ui-activity-container" src="./app-built.min(5).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="school-ui-shared" src="./app-built.min(6).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="school-ui-studyplan" src="./app-built.min(7).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="campus-studyplan-ui" src="./app-built.min(8).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="json2" src="./json2.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-1.0" data-requiremodule="mediaelement-and-player" src="./mediaelement-and-player.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="text" src="./text.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="underscore" src="./underscore.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-1.0" data-requiremodule="asr-core" src="./main.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="markdownjs" src="./markdown.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="jquery.ui" src="./jquery-ui.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-2.0" data-requiremodule="moment" src="./moment_langs.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="troopjs-1.0" data-requiremodule="mediaelement-plugin-ef" src="./app-built.min(9).js"></script></head>
+	
+	<body class="iframed-self-study" data-restyling="true" style="cursor: auto;">
+	
+		<div class="gud ets-sp-migtation" data-woven="school-ui-studyplan/widget/migration/main@157"></div>
+		<div class="gud ets-sp-init" data-iframe-height="" data-delay-stop="200" data-woven="troopjs-ef/spinner/widget@120 school-ui-studyplan/widget/initialization/hash@119 school-ui-studyplan/widget/initialization/main@118"><div class="ets-sp-init-container">
+	<div class="ets-sp-study" data-woven="school-ui-studyplan/widget/studyplan/main@164"><div class="ets-theme-daylight ets-studyplan" data-at-page-id="sp-course-page">
+    <div class="ets-sp-main">
+        <!-- Unit Start -->
+        <div class="ets-sp-unit">
+            <!-- Unit Header Start -->
+            <div class="ets-sp-unit-hd">
+                <!-- Change Course Start -->
+                <div class="ets-sp-chc" data-woven="school-ui-studyplan/widget/studyplan/header/change-course/main@168">
+<div class="ets-sp-chc-hd">
+    
+    <div class="ets-sp-chc-widget ets-sp-chc-link" style="width: 162px;">
+        <h3>Inglês Geral</h3>
+        <h4>2-Iniciante</h4>
+        <a class="ets-sp-chc-link-url" data-blurb-id="668938" data-text-en="Change course" href="https://learn.corporate.ef.com/change-course" data-woven="troopjs-ef/blurb/widget@651">Mudar de curso</a>
+    </div>
+    
+</div>
+</div>
+                <div data-woven="school-ui-studyplan/widget/studyplan/header/course-list/main@169">
+
+<div class="ets-sp-chc-bd ets-none">
+    <div class="ets-sp-chc-courses clearfix">
+        <button class="btn btn-default btn-sm ets-sp-chc-close" data-action="close">
+        <i class="glyphicon glyphicon-remove"></i> <span data-blurb-id="450020" data-text-en="close" data-woven="troopjs-ef/blurb/widget@1322">Fechar</span></button>
+        <div data-action="change-level"><div class="ets-sp-chc-courses-row"><div class="ets-sp-chc-course ets-2-col clearfix" data-course-type="GE"><h3>Inglês Geral</h3><ul><li data-action="select-level" data-template-id="20000507">1-Iniciante</li><li data-action="select-level" data-template-id="20000524" class="ets-active">2-Iniciante</li><li data-action="select-level" data-template-id="20000525">3-Iniciante</li><li data-action="select-level" data-template-id="20000526">4-Básico</li><li data-action="select-level" data-template-id="20000527">5-Básico</li><li data-action="select-level" data-template-id="20000547">6-Básico</li><li data-action="select-level" data-template-id="20000548">7-Intermediário</li><li data-action="select-level" data-template-id="20000549">8-Intermediário</li></ul><ul><li data-action="select-level" data-template-id="20000550">9-Intermediário</li><li data-action="select-level" data-template-id="20000585">10-Pós-Intermediário</li><li data-action="select-level" data-template-id="20000599">11-Pós-Intermediário</li><li data-action="select-level" data-template-id="20000600">12-Pós-Intermediário</li><li data-action="select-level" data-template-id="20000608">13-Avançado</li><li data-action="select-level" data-template-id="20000609">14-Avançado</li><li data-action="select-level" data-template-id="20000610">15-Avançado</li><li data-action="select-level" data-template-id="20000611">16-Pós-Avançado</li></ul></div><div class="ets-sp-chc-course ets-1-col clearfix" data-course-type="TRV"><h3>Inglês Para Viajar</h3><ul><li data-action="select-level" data-template-id="20000692">Inglês para Viagens</li></ul></div></div><div class="ets-sp-chc-courses-row"><div class="ets-sp-chc-course ets-2-col clearfix" data-course-type="BE"><h3>Inglês Para Negócios</h3><ul><li data-action="select-level" data-template-id="20000646">Correspondência</li><li data-action="select-level" data-template-id="20000647">Gestão</li><li data-action="select-level" data-template-id="20000648">Reuniões</li><li data-action="select-level" data-template-id="20000649">Negociações</li><li data-action="select-level" data-template-id="20000650">Apresentações</li><li data-action="select-level" data-template-id="20000651">Práticas Sociais</li><li data-action="select-level" data-template-id="20000652">Falando ao telefone</li><li data-action="select-level" data-template-id="20001019">Gestão de projeto</li></ul><ul><li data-action="select-level" data-template-id="20001082">Balcão da Cia. Aérea</li><li data-action="select-level" data-template-id="20001085">B1 Intercultural communication</li><li data-action="select-level" data-template-id="20001086">B2 Intercultural communication</li><li data-action="select-level" data-template-id="20001087">C1 Intercultural communication</li><li data-action="select-level" data-template-id="20001088">B1 Human Resources</li><li data-action="select-level" data-template-id="20001089">B2 Human Resources</li><li data-action="select-level" data-template-id="20001090">C1 Human Resources</li></ul></div></div><div class="ets-sp-chc-courses-row"><div class="ets-sp-chc-course ets-3-col clearfix" data-course-type="INDB2B"><h3>Inglês Técnico</h3><ul><li data-action="select-level" data-template-id="20000653">Automotivo</li><li data-action="select-level" data-template-id="20000654">Aviação</li><li data-action="select-level" data-template-id="20000655">Bancos e Finanças</li><li data-action="select-level" data-template-id="20000656">Construção</li><li data-action="select-level" data-template-id="20000657">Ciências</li><li data-action="select-level" data-template-id="20000658">Indústria Hoteleira</li><li data-action="select-level" data-template-id="20000659">Seguros</li><li data-action="select-level" data-template-id="20000660">Indústria de TI</li></ul><ul><li data-action="select-level" data-template-id="20000661">Direito</li><li data-action="select-level" data-template-id="20000662">Logística</li><li data-action="select-level" data-template-id="20000663">Marítimo</li><li data-action="select-level" data-template-id="20000664">Indústria Médica</li><li data-action="select-level" data-template-id="20000665">Militar</li><li data-action="select-level" data-template-id="20000666">Escritório</li><li data-action="select-level" data-template-id="20000667">Indústria de Petróleo e Gás</li><li data-action="select-level" data-template-id="20000668">Farmacêutico</li></ul><ul><li data-action="select-level" data-template-id="20000669">Polícia e Imigração</li><li data-action="select-level" data-template-id="20000671">Sociedade e Lazer</li><li data-action="select-level" data-template-id="20000672">Telecomunicações</li><li data-action="select-level" data-template-id="20000673">Indústria de Viagens</li><li data-action="select-level" data-template-id="20000674">Pesquisa</li><li data-action="select-level" data-template-id="20000747">Siderurgia e Mineração</li></ul></div></div></div>
+    </div>
+</div>
+
+
+<!--
+ <div class="ets-sp-chc-courses-row">
+    <div class="ets-sp-chc-course ets-2-col clearfix">
+        <h3>Level Name</h3>
+        <ul>
+            <li class="ets-pass"> Level Item<i class="ets-icon-badge-checkmark"></i></li>
+            <li class="ets-active">Actived Item</li>
+            <li>Normal Item</li>
+        </ul>
+        ...
+    </div>
+</div>
+--></div>
+                <!-- Change Course End -->
+
+                <!-- Unit Navigation Start -->
+                <div class="ets-sp-unn" data-woven="school-ui-studyplan/widget/studyplan/header/unit-navigation/main@170" style="padding-left: 162px;">
+
+<div class="ets-sp-unn-main">
+	
+	    <div class="ets-sp-unn-prev" data-action="navigate/prev/unit"><i class="glyphicon icon-angle-left"></i></div>
+	    <div class="ets-sp-unn-title"> <strong data-blurb-id="105267" data-text-en="Unit" data-woven="troopjs-ef/blurb/widget@653">Unidade</strong><strong>5</strong> <span title="Lugares e transporte">Lugares e transporte</span> </div>
+	    <div class="ets-sp-unn-next" data-action="navigate/next/unit"><i class="glyphicon icon-angle-right"></i></div>
+    
+</div></div>
+                <!-- Unit Navigation End -->
+
+                <!-- Unit Overview Start -->
+                <div class="ets-sp-uno" data-ccl="school.e12.showUnitOverview" data-woven="school-ui-studyplan/widget/studyplan/header/unit-overview/main@200 troopjs-ef/ccl/placeholder@171"><div class="ets-sp-uno-main">
+    <button class="btn btn-default btn-sm ets-sp-uno-btn" data-blurb-id="450055" data-text-en="Unit Overview" data-woven="troopjs-ef/blurb/widget@202">Visão Geral da Unidade</button>
+</div></div>
+                <!-- Unit Overview End -->
+            </div>
+            <!-- Unit Header End -->
+
+            <!-- Unit Body Start -->
+            <div class="ets-sp-unit-bd">
+                <!-- Sequence Navigation Start -->
+                <div class="ets-sp-sequence-wrapper" data-at-page-id="sp-sequence-navigation-container" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-navigation/main@172"><div class="ets-sp-sequence-navigation-container"><div class="ets-sp-sqn ets-sp-sequence-item">
+	<!-- Sequence Navigation Start -->
+	<div class="ets-sp-sqn-main">
+		<ul class="ets-sp-sqn-container">
+            <div class="ets-sp-sqn-line"></div>
+        <li class="ets-sp-sqn-item ets-suggest ets-active" data-item-id="c7cb332a-3992-4abe-a514-ac919d36b01f" data-type-code="lesson" data-unit-studyplan-mode="2" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-navigation/item/lesson@558"><div class="ets-sp-sqn-item-badge">
+	<i class="ets-sp-sqn-item-icon">
+		<i class="ets-sp-sqn-icon-bg glyphicon icon-circle"></i>
+		<i class="ets-sp-sqn-icon-badge ets-icon-badge-lesson"></i>
+	</i>
+</div>
+<div class="ets-sp-sqn-item-title">Decidindo aonde ir no fim de semana</div>
+<i class="ets-icon-arrow-up"></i></li><li class="ets-sp-sqn-item" data-item-id="3be62850-eb71-4d38-b967-c1beb9132006" data-type-code="lesson" data-unit-studyplan-mode="2" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-navigation/item/lesson@559"><div class="ets-sp-sqn-item-badge">
+	<i class="ets-sp-sqn-item-icon">
+		<i class="ets-sp-sqn-icon-bg glyphicon icon-circle"></i>
+		<i class="ets-sp-sqn-icon-badge ets-icon-badge-lesson"></i>
+	</i>
+</div>
+<div class="ets-sp-sqn-item-title">Rodando pela cidade</div>
+<i class="ets-icon-arrow-up"></i></li><li class="ets-sp-sqn-item" data-item-id="d4e88af5-b328-4b95-b729-6608dc9310e3" data-type-code="lesson" data-unit-studyplan-mode="2" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-navigation/item/lesson@560"><div class="ets-sp-sqn-item-badge">
+	<i class="ets-sp-sqn-item-icon">
+		<i class="ets-sp-sqn-icon-bg glyphicon icon-circle"></i>
+		<i class="ets-sp-sqn-icon-badge ets-icon-badge-lesson"></i>
+	</i>
+</div>
+<div class="ets-sp-sqn-item-title">Descrevendo um bairro</div>
+<i class="ets-icon-arrow-up"></i></li><li class="ets-sp-sqn-item" data-item-id="6ff59ec0-b880-4768-a38c-6eda7da1b958" data-type-code="lesson" data-unit-studyplan-mode="2" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-navigation/item/lesson@561"><div class="ets-sp-sqn-item-badge">
+	<i class="ets-sp-sqn-item-icon">
+		<i class="ets-sp-sqn-icon-bg glyphicon icon-circle"></i>
+		<i class="ets-sp-sqn-icon-badge ets-icon-badge-lesson"></i>
+	</i>
+</div>
+<div class="ets-sp-sqn-item-title">Como pedir orientações para chegar a um lugar</div>
+<i class="ets-icon-arrow-up"></i></li><li class="ets-sp-sqn-item ets-sp-sqn-item-goal ets-locked" data-item-id="2630b5fa-bcac-49fc-917c-07050a1fb3fc" data-type-code="goal" data-unit-studyplan-mode="2" data-original-title="" title="" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-navigation/item/cp-goal@562"><div class="ets-sp-sqn-item-badge">
+	<i class="ets-sp-sqn-item-icon">
+		<i class="ets-sp-sqn-icon-bg ets-icon-goal-bg"></i>
+		<i class="ets-sp-sqn-icon-badge ets-icon-badge-goal-poly"></i>
+	</i>
+<div class="ets-badge-custommark" data-item-data="{&quot;collapsed&quot;:false,&quot;id&quot;:&quot;campus_student_studyplan_item!2630b5fa-bcac-49fc-917c-07050a1fb3fc&quot;,&quot;indexed&quot;:1724954624,&quot;typeCode&quot;:&quot;goal&quot;,&quot;itemIndex&quot;:4,&quot;points&quot;:0,&quot;isOptional&quot;:true,&quot;properties&quot;:{&quot;pacePoints&quot;:50,&quot;paces&quot;:[{&quot;pacePoints&quot;:30,&quot;paceDays&quot;:21,&quot;text&quot;:&quot;1-2&quot;},{&quot;pacePoints&quot;:50,&quot;paceDays&quot;:14,&quot;text&quot;:&quot;3-5&quot;,&quot;selected&quot;:true},{&quot;pacePoints&quot;:70,&quot;paceDays&quot;:7,&quot;text&quot;:&quot;5+&quot;},{&quot;pacePoints&quot;:0,&quot;paceDays&quot;:0,&quot;text&quot;:&quot;Vou estudar no meu ritmo&quot;}],&quot;templateUnitId&quot;:30001794},&quot;progress&quot;:{&quot;collapsed&quot;:false,&quot;id&quot;:&quot;campus_student_studyplan_item_progress!2630b5fa-bcac-49fc-917c-07050a1fb3fc&quot;,&quot;indexed&quot;:1724954773,&quot;properties&quot;:{&quot;startDate&quot;:1723141119268,&quot;endDate&quot;:1724350719268,&quot;leftDays&quot;:0},&quot;state&quot;:0,&quot;maxAge&quot;:-1,&quot;expires&quot;:1724954772},&quot;isTemplate&quot;:false,&quot;maxAge&quot;:86400,&quot;lastModified&quot;:null,&quot;expires&quot;:1725041024}" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-navigation/mark/cp-goal@1350"><span class="badge ets-sp-badge-normal campus-badge-normal"></span></div><div class="ets-badge-custommark" data-item-data="{&quot;collapsed&quot;:false,&quot;id&quot;:&quot;campus_student_studyplan_item!2630b5fa-bcac-49fc-917c-07050a1fb3fc&quot;,&quot;indexed&quot;:1724954624,&quot;typeCode&quot;:&quot;goal&quot;,&quot;itemIndex&quot;:4,&quot;points&quot;:0,&quot;isOptional&quot;:true,&quot;properties&quot;:{&quot;pacePoints&quot;:50,&quot;paces&quot;:[{&quot;pacePoints&quot;:30,&quot;paceDays&quot;:21,&quot;text&quot;:&quot;1-2&quot;},{&quot;pacePoints&quot;:50,&quot;paceDays&quot;:14,&quot;text&quot;:&quot;3-5&quot;,&quot;selected&quot;:true},{&quot;pacePoints&quot;:70,&quot;paceDays&quot;:7,&quot;text&quot;:&quot;5+&quot;},{&quot;pacePoints&quot;:0,&quot;paceDays&quot;:0,&quot;text&quot;:&quot;Vou estudar no meu ritmo&quot;}],&quot;templateUnitId&quot;:30001794},&quot;progress&quot;:{&quot;collapsed&quot;:false,&quot;id&quot;:&quot;campus_student_studyplan_item_progress!2630b5fa-bcac-49fc-917c-07050a1fb3fc&quot;,&quot;indexed&quot;:1724954773,&quot;properties&quot;:{&quot;startDate&quot;:1723141119268,&quot;endDate&quot;:1724350719268,&quot;leftDays&quot;:0},&quot;state&quot;:0,&quot;maxAge&quot;:-1,&quot;expires&quot;:1724954772},&quot;isTemplate&quot;:false,&quot;maxAge&quot;:86400,&quot;lastModified&quot;:null,&quot;expires&quot;:1725041024}" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-navigation/mark/locked@1351"><i class="ets-icon-badge-locked">
+	<i class="ets-sp-locked-mark-bg glyphicon icon-circle"></i>
+	<i class="ets-sp-locked-mark-icon ets-icon-lock"></i>
+</i></div></div>
+<div class="ets-sp-sqn-item-title">Objetivo</div>
+<i class="ets-icon-arrow-up"></i></li></ul>
+	</div>
+	<!-- Sequence Navigation End -->
+</div></div></div>
+                <div class="ets-sp-sequence-wrapper" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-container/main@173"><div class="ets-sp-sequence-container"><div class="ets-sp-sequence-item" data-at-page-id="sp-sequence-item-c7cb332a-3992-4abe-a514-ac919d36b01f" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-container/lesson/main@581">
+<div class="ets-sp-lsn">
+	<div class="ets-sp-lsn-main">
+		<div class="ets-sp-lsn-hd clearfix">
+			<img src="./GE_2.5.1_deciding_web.jpg" width="260" height="160">
+			<div class="ets-sp-lsn-info">
+				<h4><span data-blurb-id="490238" data-text-en="Lesson" data-woven="troopjs-ef/blurb/widget@1310">Lição</span> 1</h4>
+				<h1>Decidindo aonde ir no fim de semana</h1>
+				
+					
+					
+				
+			</div>
+		</div>
+		<div class="ets-sp-lsn-bd">
+			<div data-physical-lesson-id="40007705" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-container/lesson/step-list/main@1311">
+<div class="ets-sp-steps">
+	
+	<!-- Step Start -->
+	<div data-id="student_step!9405c238-41d3-4a0c-9525-039699d096f0" data-physical-lesson-id="40007705" data-show-button="false" data-has-continue="false" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-container/lesson/step/main@1335">
+<ul class="ets-sp-step ets-pass " data-hash="{&quot;prefix&quot;:&quot;school&quot;,&quot;enrollment&quot;:&quot;7493eb36-73e7-4f94-8a3d-0d3d7c210548&quot;,&quot;course&quot;:&quot;7493eb36-73e7-4f94-8a3d-0d3d7c210548&quot;,&quot;level&quot;:&quot;1c419df9-d1da-4d29-b91d-bdf4d157bb76&quot;,&quot;unit&quot;:&quot;e89c0f97-2277-4ac5-baff-56124af07a1c&quot;,&quot;lesson&quot;:&quot;a920f73d-33d6-4442-8f37-a25d1762081a&quot;,&quot;step&quot;:&quot;9405c238-41d3-4a0c-9525-039699d096f0&quot;}">
+	<li class="ets-sp-step-no">1</li>
+	<li class="ets-sp-step-type">Vocabulário</li>
+	<li class="ets-sp-step-title ets-overflow" title="Lugares na cidade">Lugares na cidade</li>
+	<li class="ets-sp-step-action">
+		
+			
+				<i class="ets-icon-badge-checkmark"></i>
+			
+		
+	</li>
+</ul></div>
+	<!-- Step End -->
+
+	<!-- Step Start -->
+	<div data-id="student_step!ad6e563e-ed3c-43bd-8c1c-c54dc21a9c8d" data-physical-lesson-id="40007705" data-show-button="true" data-has-continue="false" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-container/lesson/step/main@1336">
+<ul class="ets-sp-step  ets-showButton" data-hash="{&quot;prefix&quot;:&quot;school&quot;,&quot;enrollment&quot;:&quot;7493eb36-73e7-4f94-8a3d-0d3d7c210548&quot;,&quot;course&quot;:&quot;7493eb36-73e7-4f94-8a3d-0d3d7c210548&quot;,&quot;level&quot;:&quot;1c419df9-d1da-4d29-b91d-bdf4d157bb76&quot;,&quot;unit&quot;:&quot;e89c0f97-2277-4ac5-baff-56124af07a1c&quot;,&quot;lesson&quot;:&quot;a920f73d-33d6-4442-8f37-a25d1762081a&quot;,&quot;step&quot;:&quot;ad6e563e-ed3c-43bd-8c1c-c54dc21a9c8d&quot;}">
+	<li class="ets-sp-step-no">2</li>
+	<li class="ets-sp-step-type">Expressões</li>
+	<li class="ets-sp-step-title ets-overflow" title="Dando sugestões e respondendo">Dando sugestões e respondendo</li>
+	<li class="ets-sp-step-action">
+		
+			<button class="btn btn-primary btn-block btn-sm ets-sp-step-start">
+				
+					<span data-blurb-id="450009" data-text-en="Start" data-woven="troopjs-ef/blurb/widget@1352">Começar</span>
+				
+			</button>
+		
+	</li>
+</ul></div>
+	<!-- Step End -->
+
+	<!-- Step Start -->
+	<div data-id="student_step!597a3c65-87bc-4683-9448-08cac0de2465" data-physical-lesson-id="40007705" data-show-button="false" data-has-continue="false" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-container/lesson/step/main@1337">
+<ul class="ets-sp-step  " data-hash="{&quot;prefix&quot;:&quot;school&quot;,&quot;enrollment&quot;:&quot;7493eb36-73e7-4f94-8a3d-0d3d7c210548&quot;,&quot;course&quot;:&quot;7493eb36-73e7-4f94-8a3d-0d3d7c210548&quot;,&quot;level&quot;:&quot;1c419df9-d1da-4d29-b91d-bdf4d157bb76&quot;,&quot;unit&quot;:&quot;e89c0f97-2277-4ac5-baff-56124af07a1c&quot;,&quot;lesson&quot;:&quot;a920f73d-33d6-4442-8f37-a25d1762081a&quot;,&quot;step&quot;:&quot;597a3c65-87bc-4683-9448-08cac0de2465&quot;}">
+	<li class="ets-sp-step-no">3</li>
+	<li class="ets-sp-step-type">Expressões</li>
+	<li class="ets-sp-step-title ets-overflow" title="Expressões de ouvintes">Expressões de ouvintes</li>
+	<li class="ets-sp-step-action">
+		
+			<button class="btn btn-primary btn-block btn-sm ets-sp-step-start">
+				
+					<span data-blurb-id="450009" data-text-en="Start" data-woven="troopjs-ef/blurb/widget@1353">Começar</span>
+				
+			</button>
+		
+	</li>
+</ul></div>
+	<!-- Step End -->
+
+	<!-- Step Start -->
+	<div data-id="student_step!db80305e-d2a4-447c-8c5a-fdd088aee78e" data-physical-lesson-id="40007705" data-show-button="false" data-has-continue="false" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-container/lesson/step/main@1338">
+<ul class="ets-sp-step  " data-hash="{&quot;prefix&quot;:&quot;school&quot;,&quot;enrollment&quot;:&quot;7493eb36-73e7-4f94-8a3d-0d3d7c210548&quot;,&quot;course&quot;:&quot;7493eb36-73e7-4f94-8a3d-0d3d7c210548&quot;,&quot;level&quot;:&quot;1c419df9-d1da-4d29-b91d-bdf4d157bb76&quot;,&quot;unit&quot;:&quot;e89c0f97-2277-4ac5-baff-56124af07a1c&quot;,&quot;lesson&quot;:&quot;a920f73d-33d6-4442-8f37-a25d1762081a&quot;,&quot;step&quot;:&quot;db80305e-d2a4-447c-8c5a-fdd088aee78e&quot;}">
+	<li class="ets-sp-step-no">4</li>
+	<li class="ets-sp-step-type">Conversação</li>
+	<li class="ets-sp-step-title ets-overflow" title="Transformando afirmativas em perguntas">Transformando afirmativas em perguntas</li>
+	<li class="ets-sp-step-action">
+		
+			<button class="btn btn-primary btn-block btn-sm ets-sp-step-start">
+				
+					<span data-blurb-id="450009" data-text-en="Start" data-woven="troopjs-ef/blurb/widget@1354">Começar</span>
+				
+			</button>
+		
+	</li>
+</ul></div>
+	<!-- Step End -->
+
+	<!-- Step Start -->
+	<div data-id="student_step!e23e14fe-9bc7-4e4c-974f-c7118230ef80" data-physical-lesson-id="40007705" data-show-button="false" data-has-continue="false" data-woven="school-ui-studyplan/widget/studyplan/body/sequence-container/lesson/step/main@1339">
+<ul class="ets-sp-step  " data-hash="{&quot;prefix&quot;:&quot;school&quot;,&quot;enrollment&quot;:&quot;7493eb36-73e7-4f94-8a3d-0d3d7c210548&quot;,&quot;course&quot;:&quot;7493eb36-73e7-4f94-8a3d-0d3d7c210548&quot;,&quot;level&quot;:&quot;1c419df9-d1da-4d29-b91d-bdf4d157bb76&quot;,&quot;unit&quot;:&quot;e89c0f97-2277-4ac5-baff-56124af07a1c&quot;,&quot;lesson&quot;:&quot;a920f73d-33d6-4442-8f37-a25d1762081a&quot;,&quot;step&quot;:&quot;e23e14fe-9bc7-4e4c-974f-c7118230ef80&quot;}">
+	<li class="ets-sp-step-no">5</li>
+	<li class="ets-sp-step-type">Tarefa final</li>
+	<li class="ets-sp-step-title ets-overflow" title="Decidindo aonde ir no fim de semana">Decidindo aonde ir no fim de semana</li>
+	<li class="ets-sp-step-action">
+		
+			<button class="btn btn-primary btn-block btn-sm ets-sp-step-start">
+				
+					<span data-blurb-id="450009" data-text-en="Start" data-woven="troopjs-ef/blurb/widget@1355">Começar</span>
+				
+			</button>
+		
+	</li>
+</ul></div>
+	<!-- Step End -->
+
+</div>
+
+</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade ets-mob-modal ets-mob-modal-started" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content ets-mob-modal-tip">
+			<div class="ets-tip-icon">
+				<i class="ets-icon-mob-started"></i>
+			</div>
+			<h2 data-blurb-id="661846" data-text-en="Started on mobile" data-woven="troopjs-ef/blurb/widget@1312">Iniciada no celular</h2>
+			<p data-blurb-id="661848" data-text-en="You have started this lesson on your mobile." data-woven="troopjs-ef/blurb/widget@1313">Você iniciou essa lição em seu telefone.</p>
+			<p data-blurb-id="663229" data-text-en="You can choose to study the lesson on the web as well, or continue on your mobile device." data-woven="troopjs-ef/blurb/widget@1314">Você pode escolher estudar essa lição no computador também ou continuar em seu telefone.</p>
+			<div class="ets-tip-button">
+				<button class="btn btn-default ets-btn-modal-close" data-blurb-id="661850" data-text-en="Got it" data-woven="troopjs-ef/blurb/widget@1315">Entendi</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade ets-mob-modal ets-mob-modal-passed" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content ets-mob-modal-tip">
+			<div class="ets-tip-icon">
+				<i class="ets-icon-mob-passed"></i>
+			</div>
+			<h2 data-blurb-id="661847" data-text-en="Passed on mobile" data-woven="troopjs-ef/blurb/widget@1316">Concluída no celular</h2>
+			<p data-blurb-id="663228" data-text-en="You have passed this lesson on your mobile." data-woven="troopjs-ef/blurb/widget@1317">Você finalizou essa lição em seu telefone.</p>
+			<p data-blurb-id="661849" data-text-en="You might see more new content herebut don&#39;t worry, all good!" data-woven="troopjs-ef/blurb/widget@1318">Você pode fazer esta lição no navegador também ou continuar só no celular.</p>
+			<div class="ets-tip-button">
+				<button class="btn btn-default ets-btn-modal-close" data-blurb-id="661850" data-text-en="Got it" data-woven="troopjs-ef/blurb/widget@1319">Entendi</button>
+			</div>
+		</div>
+	</div>
+</div></div></div></div>
+            </div>
+            <!-- Unit Body End -->
+        </div>
+        <!-- Unit End -->
+
+    </div>
+</div>
+<div data-woven="school-ui-shared/plugins/confirm-box/main@174">
+<div class="modal fade in confirm-modal-box" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">undefined</h4>
+			</div>
+			<div class="modal-body">
+				<p>undefined</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal"></button>
+				<button type="button" class="btn btn-primary" data-action="confirm"></button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-backdrop fade in hidden"></div></div>
+<div data-woven="school-ui-shared/plugins/alert-box/main@175">
+<div class="modal fade in alert-modal-box" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">undefined</h4>
+			</div>
+			<div class="modal-body">
+				<p>undefined</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-action="ok" data-blurb-id="150652" data-text-en="OK" data-woven="troopjs-ef/blurb/widget@198">OK</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-backdrop fade in hidden"></div></div></div>
+</div>
+<div class="ets-sp-loading ets-none">
+	<div class="ets-inner">
+		<div class="ets-inner-cell">
+			<div class="ets-icon">
+			</div>
+		</div>
+	</div>
+	<div class="ets-backdrop"></div>
+</div>
+<div data-woven="school-ui-shared/plugins/http-request-handling/main@165"></div></div>
+		<div class="ets-ui-acc-wrap ets-acc-open" data-woven="school-ui-activity-container/widget/activity/activity-container/main@121"><div class="ets-ui-acc" data-at-page-id="sp-activity-container" data-iframe-height="" style="top: 36px; height: 768px; overflow: hidden;">
+	<div class="ets-ui-acc-hd">
+		<div class="ets-ui-acc-hd-main">
+			<div class="ets-ui-acc-activity-info-container" data-woven="school-ui-activity-container/widget/activity/info/main@127"><div class="ets-ui-acc-activity-info" data-action="activity-info-dialog"></div>
+<div class="ets-infobox-dialog-bg" data-action="activity-info-dialog-dismiss"></div>
+<div class="ets-infobox-dialog">
+    <div class="ets-infobox-text">
+        <div class="ets-infobox-title" data-woven="school-ui-activity-container/widget/activity/step-title/main@136"><span data-at-id="lbl-step-name">Lugares na cidade</span></div>
+        <div class="ets-infobox-description" data-woven="school-ui-activity-container/widget/activity/activity-reference/main@156"><div class="ets-act-intro">
+    <div class="ets-act-intro-title" data-at-id="lbl-title"><p>Pratique as palavras.  Clique nos cartões e ouça o áudio.  Fale no seu microfone.</p></div>
+    <div class="ets-act-intro-desc" data-at-id="lbl-description"></div>
+</div></div>
+    </div>
+    <div class="ets-infobox-ok-button" data-action="activity-info-dialog-dismiss" data-blurb-id="730245" data-woven="troopjs-ef/blurb/widget@137">Certo, entendi.</div>
+</div></div>
+			<div class="ets-ui-acc-step-nav" data-woven="school-ui-activity-container/widget/activity/navigation/main@128">
+<ul class="ets-ui-acc-act-nav">
+    <li class="ets-ui-acc-act-item ets-ui-acc-act-item-dummy ">
+        <a></a>
+    </li><!--
+    
+    --><li class="ets-ui-acc-act-item ets-ui-acc-act-item-passed" data-at-id="student_activity!0ea90fb9-a3a6-4cac-8d17-25a984351c9e">
+        <a data-nav-index="0" data-index-label="1 / 5" data-act-id="student_activity!0ea90fb9-a3a6-4cac-8d17-25a984351c9e" data-action="route" href="javascript:void(0)"></a>
+    </li><!--
+    
+    --><li class="ets-ui-acc-act-item ets-ui-acc-act-item-passed" data-at-id="student_activity!d8dbf918-f48e-4426-b47d-f3fbe1b9df61">
+        <a data-nav-index="1" data-index-label="2 / 5" data-act-id="student_activity!d8dbf918-f48e-4426-b47d-f3fbe1b9df61" data-action="route" href="javascript:void(0)"></a>
+    </li><!--
+    
+    --><li class="ets-ui-acc-act-item ets-ui-acc-act-item-passed" data-at-id="student_activity!c1b35eb9-c12f-4bd3-a40c-69027526e077">
+        <a data-nav-index="2" data-index-label="3 / 5" data-act-id="student_activity!c1b35eb9-c12f-4bd3-a40c-69027526e077" data-action="route" href="javascript:void(0)"></a>
+    </li><!--
+    
+    --><li class="ets-ui-acc-act-item ets-ui-acc-act-item-passed ets-ui-acc-act-item-prev" data-at-id="student_activity!250d27c1-e609-456c-be74-b31be5eb950b">
+        <a data-nav-index="3" data-index-label="4 / 5" data-act-id="student_activity!250d27c1-e609-456c-be74-b31be5eb950b" data-action="route" href="javascript:void(0)"></a>
+    </li><!--
+    
+    --><li class="ets-ui-acc-act-item ets-ui-acc-act-item-active" data-at-id="student_activity!c4a50267-c462-4fe3-95c2-c811dd2eed9c">
+        <a data-nav-index="4" data-index-label="5 / 5" data-act-id="student_activity!c4a50267-c462-4fe3-95c2-c811dd2eed9c" data-action="route" href="javascript:void(0)">5</a>
+    </li><!--
+    
+    --><li class="ets-ui-acc-act-item ets-ui-acc-act-item-summary  ets-ui-acc-act-item-summary-green">
+        <a href="javascript:void(0)" data-action="route" class=" ets-passed"></a>
+    </li>
+    <li class="ets-ui-acc-act-item ets-ui-acc-act-item-dummy ">
+        <a></a>
+    </li>
+</ul></div>
+			<div class="ets-ui-acc-btn-close" data-action="close" data-at-id="btn-close"></div>
+		</div>
+	</div>
+	<div class="ets-ui-acc-bd">
+		<div class="ets-ui-acc-bd-main"><div class="ets-activity" data-woven="school-ui-activity-container/widget/activity/activity-manager/main@676"><div class="ets-act-bd" data-activity-type="FlaExe" data-epaper="false">
+	<div class="ets-act-bd-main"><div class="ets-activity-launcher" data-woven="school-ui-activity/launcher/main@1420"><div class="ets-act-bd-activity" data-at-id="activity-container" data-at-activity-id="c4a50267-c462-4fe3-95c2-c811dd2eed9c" data-woven="school-ui-activity/activity/flashcard-exercise/main@1422"><div class="ets-act-fce-wrap" data-woven="school-ui-activity/activity/flashcard-exercise/flashcard-exercise@1424">
+
+<div class="ets-act-fce">
+	<div class="ets-act-fce-main">
+		<div class="ets-act-fce-bd">
+			<div class="ets-act-fce-stack">
+				
+	<div class="ets-act-fce-card  ets-correct ets-done" id="ets-act-fce-cardc_5" data-at-id="c_5">
+		<div class="ets-bd">
+			<img src="./0B.5.2.2.1_University.jpg">
+		</div>
+		<div class="ets-icon">
+			<span style=""></span>
+		</div>
+		<div class="ets-ft">
+			<div class="ets-act-fce-word ets-audio-only">
+				
+					<div class="ets-audio">
+						<div class="ets-act-ap-wrap">
+							<div data-at-id="btn-audio-start" class="ets-act-ap ets-ap-small">
+								<span class="mejs-offscreen">Audio Player</span><div id="mep_32" class="mejs-container svg ets-ap ets-ap-small ets-ap-nobar mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 400px; height: 30px; display: inline-block;"><div class="mejs-inner"><div class="mejs-mediaelement"><audio preload="none" data-src="https://et2.ef-cdn.com/Juno/10/50/51/v/105051/GE_2.5.1.1.2_5_v2.mp3" type="audio/mpeg" data-at-id="answer_audio_c_5" class="ets-ap ets-ap-small ets-ap-nobar" src="https://et2.ef-cdn.com/Juno/10/50/51/v/105051/GE_2.5.1.1.2_5_v2.mp3" data-woven="school-ui-shared/widget/audio-player/main@1426"></audio></div><div class="mejs-layers"><div class="mejs-poster mejs-layer" style="display: none; width: 400px; height: 30px;"></div></div><div class="mejs-controls"><div class="mejs-button mejs-playpause-button mejs-play"><button type="button" aria-controls="mep_32" title="Play" aria-label="Play"></button></div><div class="mejs-time mejs-currenttime-container" role="timer" aria-live="off"><span class="mejs-currenttime">00:00</span></div><div class="mejs-time-rail"><span class="mejs-time-total mejs-time-slider" aria-label="Time Slider" aria-valuemin="0" aria-valuemax="1.2331" aria-valuenow="0" aria-valuetext="00:00" role="slider" tabindex="0" style=""><span class="mejs-time-buffering" style="display: none;"></span><span class="mejs-time-loaded" style="width: 0px;"></span><span class="mejs-time-current" style="width: 0px;"></span><span class="mejs-time-handle" style="left: -16px;"></span><span class="mejs-time-float"><span class="mejs-time-float-current">00:00</span><span class="mejs-time-float-corner"></span></span></span></div><div class="mejs-time mejs-duration-container"><span class="mejs-duration">00:01</span></div><div class="mejs-button mejs-volume-button mejs-mute"><button type="button" aria-controls="mep_32" title="Mute" aria-label="Mute"></button></div><a href="javascript:void(0);" class="mejs-horizontal-volume-slider mejs-mute" aria-label="Volume Slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-valuetext="80%" role="slider" tabindex="0" style="display: none;"><span class="mejs-offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span><div class="mejs-horizontal-volume-total"></div><div class="mejs-horizontal-volume-current" style="width: 45px;"></div><div class="mejs-horizontal-volume-handle" style="left: 17px;"></div></a></div><div class="mejs-clear"></div></div></div>
+							</div>
+						</div>
+					</div>
+					
+						<div class="ets-text "><span>
+								university
+							</span></div>
+			</div>
+		</div>
+	</div>
+
+				
+	<div class="ets-act-fce-card ets-correct ets-done" id="ets-act-fce-cardc_1" data-at-id="c_1">
+		<div class="ets-bd">
+			<img src="./5.7.1.2.2_art_museum.jpg">
+		</div>
+		<div class="ets-icon">
+			<span></span>
+		</div>
+		<div class="ets-ft">
+			<div class="ets-act-fce-word ets-audio-only">
+				
+					<div class="ets-audio">
+						<div class="ets-act-ap-wrap">
+							<div data-at-id="btn-audio-start" class="ets-act-ap ets-ap-small">
+								<span class="mejs-offscreen">Audio Player</span><div id="mep_33" class="mejs-container svg ets-ap ets-ap-small ets-ap-nobar mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 400px; height: 30px; display: inline-block;"><div class="mejs-inner"><div class="mejs-mediaelement"><audio preload="none" data-src="https://et2.ef-cdn.com/Juno/10/50/47/v/105047/GE_2.5.1.1.2_1_v2.mp3" type="audio/mpeg" data-at-id="answer_audio_c_1" class="ets-ap ets-ap-small ets-ap-nobar" src="https://et2.ef-cdn.com/Juno/10/50/47/v/105047/GE_2.5.1.1.2_1_v2.mp3" data-woven="school-ui-shared/widget/audio-player/main@1427"></audio></div><div class="mejs-layers"><div class="mejs-poster mejs-layer" style="display: none; width: 400px; height: 30px;"></div></div><div class="mejs-controls"><div class="mejs-button mejs-playpause-button mejs-play"><button type="button" aria-controls="mep_33" title="Play" aria-label="Play"></button></div><div class="mejs-time mejs-currenttime-container" role="timer" aria-live="off"><span class="mejs-currenttime">00:00</span></div><div class="mejs-time-rail"><span class="mejs-time-total mejs-time-slider" aria-label="Time Slider" aria-valuemin="0" aria-valuemax="NaN" aria-valuenow="0" aria-valuetext="00:00" role="slider" tabindex="0"><span class="mejs-time-buffering" style="display: none;"></span><span class="mejs-time-loaded"></span><span class="mejs-time-current"></span><span class="mejs-time-handle"></span><span class="mejs-time-float"><span class="mejs-time-float-current">00:00</span><span class="mejs-time-float-corner"></span></span></span></div><div class="mejs-time mejs-duration-container"><span class="mejs-duration">00:00</span></div><div class="mejs-button mejs-volume-button mejs-mute"><button type="button" aria-controls="mep_33" title="Mute" aria-label="Mute"></button></div><a href="javascript:void(0);" class="mejs-horizontal-volume-slider mejs-mute" aria-label="Volume Slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-valuetext="80%" role="slider" tabindex="0" style="display: none;"><span class="mejs-offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span><div class="mejs-horizontal-volume-total"></div><div class="mejs-horizontal-volume-current" style="width: 45px;"></div><div class="mejs-horizontal-volume-handle" style="left: 17px;"></div></a></div><div class="mejs-clear"></div></div></div>
+							</div>
+						</div>
+					</div>
+					
+						<div class="ets-text "><span>
+								museum
+							</span></div>
+			</div>
+		</div>
+	</div>
+
+				
+	<div class="ets-act-fce-card ets-stack-1" id="ets-act-fce-cardc_6" data-at-id="c_6">
+		<div class="ets-bd">
+			<img src="./GE_2.5.1.1.2_hospital.jpg">
+		</div>
+		<div class="ets-icon">
+			<span></span>
+		</div>
+		<div class="ets-ft">
+			<div class="ets-act-fce-word ets-audio-only">
+				
+					<div class="ets-audio">
+						<div class="ets-act-ap-wrap">
+							<div data-at-id="btn-audio-start" class="ets-act-ap ets-ap-small">
+								<span class="mejs-offscreen">Audio Player</span><div id="mep_34" class="mejs-container svg ets-ap ets-ap-small ets-ap-nobar mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 400px; height: 30px; display: inline-block;"><div class="mejs-inner"><div class="mejs-mediaelement"><audio preload="none" data-src="https://et2.ef-cdn.com/Juno/10/50/48/v/105048/GE_2.5.1.1.2_2_v2.mp3" type="audio/mpeg" data-at-id="answer_audio_c_6" class="ets-ap ets-ap-small ets-ap-nobar" src="https://et2.ef-cdn.com/Juno/10/50/48/v/105048/GE_2.5.1.1.2_2_v2.mp3" data-woven="school-ui-shared/widget/audio-player/main@1428"></audio></div><div class="mejs-layers"><div class="mejs-poster mejs-layer" style="display: none; width: 400px; height: 30px;"></div></div><div class="mejs-controls"><div class="mejs-button mejs-playpause-button mejs-play"><button type="button" aria-controls="mep_34" title="Play" aria-label="Play"></button></div><div class="mejs-time mejs-currenttime-container" role="timer" aria-live="off"><span class="mejs-currenttime">00:00</span></div><div class="mejs-time-rail"><span class="mejs-time-total mejs-time-slider" aria-label="Time Slider" aria-valuemin="0" aria-valuemax="1.0504" aria-valuenow="0" aria-valuetext="00:00" role="slider" tabindex="0" style=""><span class="mejs-time-buffering" style="display: none;"></span><span class="mejs-time-loaded" style="width: 0px;"></span><span class="mejs-time-current" style="width: 0px;"></span><span class="mejs-time-handle" style="left: -16px;"></span><span class="mejs-time-float"><span class="mejs-time-float-current">00:00</span><span class="mejs-time-float-corner"></span></span></span></div><div class="mejs-time mejs-duration-container"><span class="mejs-duration">00:01</span></div><div class="mejs-button mejs-volume-button mejs-mute"><button type="button" aria-controls="mep_34" title="Mute" aria-label="Mute"></button></div><a href="javascript:void(0);" class="mejs-horizontal-volume-slider mejs-mute" aria-label="Volume Slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-valuetext="80%" role="slider" tabindex="0" style="display: none;"><span class="mejs-offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span><div class="mejs-horizontal-volume-total"></div><div class="mejs-horizontal-volume-current" style="width: 45px;"></div><div class="mejs-horizontal-volume-handle" style="left: 17px;"></div></a></div><div class="mejs-clear"></div></div></div>
+							</div>
+						</div>
+					</div>
+					
+						<div class="ets-text "><span>
+								hospital
+							</span></div>
+			</div>
+		</div>
+	</div>
+
+				
+	<div class="ets-act-fce-card ets-stack-2" id="ets-act-fce-cardc_8" data-at-id="c_8">
+		<div class="ets-bd">
+			<img src="./GE_2.5.1.1.2_train_station.jpg">
+		</div>
+		<div class="ets-icon">
+			<span></span>
+		</div>
+		<div class="ets-ft">
+			<div class="ets-act-fce-word ets-audio-only">
+				
+					<div class="ets-audio">
+						<div class="ets-act-ap-wrap">
+							<div data-at-id="btn-audio-start" class="ets-act-ap ets-ap-small">
+								<span class="mejs-offscreen">Audio Player</span><div id="mep_35" class="mejs-container svg ets-ap ets-ap-small ets-ap-nobar mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 400px; height: 30px; display: inline-block;"><div class="mejs-inner"><div class="mejs-mediaelement"><audio preload="none" data-src="https://et2.ef-cdn.com/Juno/10/50/54/v/105054/GE_2.5.1.1.2_8_v2.mp3" type="audio/mpeg" data-at-id="answer_audio_c_8" class="ets-ap ets-ap-small ets-ap-nobar" src="https://et2.ef-cdn.com/Juno/10/50/54/v/105054/GE_2.5.1.1.2_8_v2.mp3" data-woven="school-ui-shared/widget/audio-player/main@1429"></audio></div><div class="mejs-layers"><div class="mejs-poster mejs-layer" style="display: none; width: 400px; height: 30px;"></div></div><div class="mejs-controls"><div class="mejs-button mejs-playpause-button mejs-play"><button type="button" aria-controls="mep_35" title="Play" aria-label="Play"></button></div><div class="mejs-time mejs-currenttime-container" role="timer" aria-live="off"><span class="mejs-currenttime">00:00</span></div><div class="mejs-time-rail"><span class="mejs-time-total mejs-time-slider" aria-label="Time Slider" aria-valuemin="0" aria-valuemax="NaN" aria-valuenow="0" aria-valuetext="00:00" role="slider" tabindex="0"><span class="mejs-time-buffering" style="display: none;"></span><span class="mejs-time-loaded"></span><span class="mejs-time-current"></span><span class="mejs-time-handle"></span><span class="mejs-time-float"><span class="mejs-time-float-current">00:00</span><span class="mejs-time-float-corner"></span></span></span></div><div class="mejs-time mejs-duration-container"><span class="mejs-duration">00:00</span></div><div class="mejs-button mejs-volume-button mejs-mute"><button type="button" aria-controls="mep_35" title="Mute" aria-label="Mute"></button></div><a href="javascript:void(0);" class="mejs-horizontal-volume-slider mejs-mute" aria-label="Volume Slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-valuetext="80%" role="slider" tabindex="0" style="display: none;"><span class="mejs-offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span><div class="mejs-horizontal-volume-total"></div><div class="mejs-horizontal-volume-current" style="width: 45px;"></div><div class="mejs-horizontal-volume-handle" style="left: 17px;"></div></a></div><div class="mejs-clear"></div></div></div>
+							</div>
+						</div>
+					</div>
+					
+						<div class="ets-text "><span>
+								train station
+							</span></div>
+			</div>
+		</div>
+	</div>
+
+				
+	<div class="ets-act-fce-card ets-stack-3" id="ets-act-fce-cardc_7" data-at-id="c_7">
+		<div class="ets-bd">
+			<img src="./GE_2.5.1.1.2_restaurant_v1.jpg">
+		</div>
+		<div class="ets-icon">
+			<span></span>
+		</div>
+		<div class="ets-ft">
+			<div class="ets-act-fce-word ets-audio-only">
+				
+					<div class="ets-audio">
+						<div class="ets-act-ap-wrap">
+							<div data-at-id="btn-audio-start" class="ets-act-ap ets-ap-small">
+								<span class="mejs-offscreen">Audio Player</span><div id="mep_36" class="mejs-container svg ets-ap ets-ap-small ets-ap-nobar mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 400px; height: 30px; display: inline-block;"><div class="mejs-inner"><div class="mejs-mediaelement"><audio preload="none" data-src="https://et2.ef-cdn.com/Juno/10/50/53/v/105053/GE_2.5.1.1.2_7_v2.mp3" type="audio/mpeg" data-at-id="answer_audio_c_7" class="ets-ap ets-ap-small ets-ap-nobar" src="https://et2.ef-cdn.com/Juno/10/50/53/v/105053/GE_2.5.1.1.2_7_v2.mp3" data-woven="school-ui-shared/widget/audio-player/main@1430"></audio></div><div class="mejs-layers"><div class="mejs-poster mejs-layer" style="display: none; width: 400px; height: 30px;"></div></div><div class="mejs-controls"><div class="mejs-button mejs-playpause-button mejs-play"><button type="button" aria-controls="mep_36" title="Play" aria-label="Play"></button></div><div class="mejs-time mejs-currenttime-container" role="timer" aria-live="off"><span class="mejs-currenttime">00:00</span></div><div class="mejs-time-rail"><span class="mejs-time-total mejs-time-slider" aria-label="Time Slider" aria-valuemin="0" aria-valuemax="NaN" aria-valuenow="0" aria-valuetext="00:00" role="slider" tabindex="0"><span class="mejs-time-buffering" style="display: none;"></span><span class="mejs-time-loaded"></span><span class="mejs-time-current"></span><span class="mejs-time-handle"></span><span class="mejs-time-float"><span class="mejs-time-float-current">00:00</span><span class="mejs-time-float-corner"></span></span></span></div><div class="mejs-time mejs-duration-container"><span class="mejs-duration">00:00</span></div><div class="mejs-button mejs-volume-button mejs-mute"><button type="button" aria-controls="mep_36" title="Mute" aria-label="Mute"></button></div><a href="javascript:void(0);" class="mejs-horizontal-volume-slider mejs-mute" aria-label="Volume Slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-valuetext="80%" role="slider" tabindex="0" style="display: none;"><span class="mejs-offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span><div class="mejs-horizontal-volume-total"></div><div class="mejs-horizontal-volume-current" style="width: 45px;"></div><div class="mejs-horizontal-volume-handle" style="left: 17px;"></div></a></div><div class="mejs-clear"></div></div></div>
+							</div>
+						</div>
+					</div>
+					
+						<div class="ets-text "><span>
+								restaurant
+							</span></div>
+			</div>
+		</div>
+	</div>
+
+				
+	<div class="ets-act-fce-card ets-stack-4" id="ets-act-fce-cardc_4" data-at-id="c_4">
+		<div class="ets-bd">
+			<img src="./1.4.3.2_library.jpg">
+		</div>
+		<div class="ets-icon">
+			<span></span>
+		</div>
+		<div class="ets-ft">
+			<div class="ets-act-fce-word ets-audio-only">
+				
+					<div class="ets-audio">
+						<div class="ets-act-ap-wrap">
+							<div data-at-id="btn-audio-start" class="ets-act-ap ets-ap-small">
+								<span class="mejs-offscreen">Audio Player</span><div id="mep_37" class="mejs-container svg ets-ap ets-ap-small ets-ap-nobar mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 400px; height: 30px; display: inline-block;"><div class="mejs-inner"><div class="mejs-mediaelement"><audio preload="none" data-src="https://et2.ef-cdn.com/Juno/10/50/50/v/105050/GE_2.5.1.1.2_4_v2.mp3" type="audio/mpeg" data-at-id="answer_audio_c_4" class="ets-ap ets-ap-small ets-ap-nobar" src="https://et2.ef-cdn.com/Juno/10/50/50/v/105050/GE_2.5.1.1.2_4_v2.mp3" data-woven="school-ui-shared/widget/audio-player/main@1431"></audio></div><div class="mejs-layers"><div class="mejs-poster mejs-layer" style="display: none; width: 400px; height: 30px;"></div></div><div class="mejs-controls"><div class="mejs-button mejs-playpause-button mejs-play"><button type="button" aria-controls="mep_37" title="Play" aria-label="Play"></button></div><div class="mejs-time mejs-currenttime-container" role="timer" aria-live="off"><span class="mejs-currenttime">00:00</span></div><div class="mejs-time-rail"><span class="mejs-time-total mejs-time-slider" aria-label="Time Slider" aria-valuemin="0" aria-valuemax="NaN" aria-valuenow="0" aria-valuetext="00:00" role="slider" tabindex="0"><span class="mejs-time-buffering" style="display: none;"></span><span class="mejs-time-loaded"></span><span class="mejs-time-current"></span><span class="mejs-time-handle"></span><span class="mejs-time-float"><span class="mejs-time-float-current">00:00</span><span class="mejs-time-float-corner"></span></span></span></div><div class="mejs-time mejs-duration-container"><span class="mejs-duration">00:00</span></div><div class="mejs-button mejs-volume-button mejs-mute"><button type="button" aria-controls="mep_37" title="Mute" aria-label="Mute"></button></div><a href="javascript:void(0);" class="mejs-horizontal-volume-slider mejs-mute" aria-label="Volume Slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-valuetext="80%" role="slider" tabindex="0" style="display: none;"><span class="mejs-offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span><div class="mejs-horizontal-volume-total"></div><div class="mejs-horizontal-volume-current" style="width: 45px;"></div><div class="mejs-horizontal-volume-handle" style="left: 17px;"></div></a></div><div class="mejs-clear"></div></div></div>
+							</div>
+						</div>
+					</div>
+					
+						<div class="ets-text "><span>
+								library
+							</span></div>
+			</div>
+		</div>
+	</div>
+
+				
+	<div class="ets-act-fce-card ets-candidate " id="ets-act-fce-cardc_9" data-at-id="c_9">
+		<div class="ets-bd">
+			<img src="./GE_2.5.1.1.2_swimming_pool.jpg">
+		</div>
+		<div class="ets-icon">
+			<span></span>
+		</div>
+		<div class="ets-ft">
+			<div class="ets-act-fce-word ets-audio-only">
+				
+					<div class="ets-audio">
+						<div class="ets-act-ap-wrap">
+							<div data-at-id="btn-audio-start" class="ets-act-ap ets-ap-small">
+								<span class="mejs-offscreen">Audio Player</span><div id="mep_38" class="mejs-container svg ets-ap ets-ap-small ets-ap-nobar mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 400px; height: 30px; display: inline-block;"><div class="mejs-inner"><div class="mejs-mediaelement"><audio preload="none" data-src="https://et2.ef-cdn.com/Juno/10/50/46/v/105046/GE_2.5.1.1.2_9_v2.mp3" type="audio/mpeg" data-at-id="answer_audio_c_9" class="ets-ap ets-ap-small ets-ap-nobar" src="https://et2.ef-cdn.com/Juno/10/50/46/v/105046/GE_2.5.1.1.2_9_v2.mp3" data-woven="school-ui-shared/widget/audio-player/main@1432"></audio></div><div class="mejs-layers"><div class="mejs-poster mejs-layer" style="display: none; width: 400px; height: 30px;"></div></div><div class="mejs-controls"><div class="mejs-button mejs-playpause-button mejs-play"><button type="button" aria-controls="mep_38" title="Play" aria-label="Play"></button></div><div class="mejs-time mejs-currenttime-container" role="timer" aria-live="off"><span class="mejs-currenttime">00:00</span></div><div class="mejs-time-rail"><span class="mejs-time-total mejs-time-slider" aria-label="Time Slider" aria-valuemin="0" aria-valuemax="NaN" aria-valuenow="0" aria-valuetext="00:00" role="slider" tabindex="0"><span class="mejs-time-buffering" style="display: none;"></span><span class="mejs-time-loaded"></span><span class="mejs-time-current"></span><span class="mejs-time-handle"></span><span class="mejs-time-float"><span class="mejs-time-float-current">00:00</span><span class="mejs-time-float-corner"></span></span></span></div><div class="mejs-time mejs-duration-container"><span class="mejs-duration">00:00</span></div><div class="mejs-button mejs-volume-button mejs-mute"><button type="button" aria-controls="mep_38" title="Mute" aria-label="Mute"></button></div><a href="javascript:void(0);" class="mejs-horizontal-volume-slider mejs-mute" aria-label="Volume Slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-valuetext="80%" role="slider" tabindex="0" style="display: none;"><span class="mejs-offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span><div class="mejs-horizontal-volume-total"></div><div class="mejs-horizontal-volume-current" style="width: 45px;"></div><div class="mejs-horizontal-volume-handle" style="left: 17px;"></div></a></div><div class="mejs-clear"></div></div></div>
+							</div>
+						</div>
+					</div>
+					
+						<div class="ets-text "><span>
+								swimming pool
+							</span></div>
+			</div>
+		</div>
+	</div>
+
+				
+	<div class="ets-act-fce-card ets-candidate " id="ets-act-fce-cardc_3" data-at-id="c_3">
+		<div class="ets-bd">
+			<img src="./GE_2.5.1.1.2_park_v1.jpg">
+		</div>
+		<div class="ets-icon">
+			<span></span>
+		</div>
+		<div class="ets-ft">
+			<div class="ets-act-fce-word ets-audio-only">
+				
+					<div class="ets-audio">
+						<div class="ets-act-ap-wrap">
+							<div data-at-id="btn-audio-start" class="ets-act-ap ets-ap-small">
+								<span class="mejs-offscreen">Audio Player</span><div id="mep_39" class="mejs-container svg ets-ap ets-ap-small ets-ap-nobar mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 400px; height: 30px; display: inline-block;"><div class="mejs-inner"><div class="mejs-mediaelement"><audio preload="none" data-src="https://et2.ef-cdn.com/Juno/10/50/52/v/105052/GE_2.5.1.1.2_6_v2.mp3" type="audio/mpeg" data-at-id="answer_audio_c_3" class="ets-ap ets-ap-small ets-ap-nobar" src="https://et2.ef-cdn.com/Juno/10/50/52/v/105052/GE_2.5.1.1.2_6_v2.mp3" data-woven="school-ui-shared/widget/audio-player/main@1433"></audio></div><div class="mejs-layers"><div class="mejs-poster mejs-layer" style="display: none; width: 400px; height: 30px;"></div></div><div class="mejs-controls"><div class="mejs-button mejs-playpause-button mejs-play"><button type="button" aria-controls="mep_39" title="Play" aria-label="Play"></button></div><div class="mejs-time mejs-currenttime-container" role="timer" aria-live="off"><span class="mejs-currenttime">00:00</span></div><div class="mejs-time-rail"><span class="mejs-time-total mejs-time-slider" aria-label="Time Slider" aria-valuemin="0" aria-valuemax="NaN" aria-valuenow="0" aria-valuetext="00:00" role="slider" tabindex="0"><span class="mejs-time-buffering" style="display: none;"></span><span class="mejs-time-loaded"></span><span class="mejs-time-current"></span><span class="mejs-time-handle"></span><span class="mejs-time-float"><span class="mejs-time-float-current">00:00</span><span class="mejs-time-float-corner"></span></span></span></div><div class="mejs-time mejs-duration-container"><span class="mejs-duration">00:00</span></div><div class="mejs-button mejs-volume-button mejs-mute"><button type="button" aria-controls="mep_39" title="Mute" aria-label="Mute"></button></div><a href="javascript:void(0);" class="mejs-horizontal-volume-slider mejs-mute" aria-label="Volume Slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-valuetext="80%" role="slider" tabindex="0" style="display: none;"><span class="mejs-offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span><div class="mejs-horizontal-volume-total"></div><div class="mejs-horizontal-volume-current" style="width: 45px;"></div><div class="mejs-horizontal-volume-handle" style="left: 17px;"></div></a></div><div class="mejs-clear"></div></div></div>
+							</div>
+						</div>
+					</div>
+					
+						<div class="ets-text "><span>
+								park
+							</span></div>
+			</div>
+		</div>
+	</div>
+
+				
+	<div class="ets-act-fce-card ets-candidate " id="ets-act-fce-cardc_2" data-at-id="c_2">
+		<div class="ets-bd">
+			<img src="./1.4.1.2.1_bank.jpg">
+		</div>
+		<div class="ets-icon">
+			<span></span>
+		</div>
+		<div class="ets-ft">
+			<div class="ets-act-fce-word ets-audio-only">
+				
+					<div class="ets-audio">
+						<div class="ets-act-ap-wrap">
+							<div data-at-id="btn-audio-start" class="ets-act-ap ets-ap-small">
+								<span class="mejs-offscreen">Audio Player</span><div id="mep_40" class="mejs-container svg ets-ap ets-ap-small ets-ap-nobar mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 400px; height: 30px; display: inline-block;"><div class="mejs-inner"><div class="mejs-mediaelement"><audio preload="none" data-src="https://et2.ef-cdn.com/Juno/10/50/49/v/105049/GE_2.5.1.1.2_3_v2.mp3" type="audio/mpeg" data-at-id="answer_audio_c_2" class="ets-ap ets-ap-small ets-ap-nobar" src="https://et2.ef-cdn.com/Juno/10/50/49/v/105049/GE_2.5.1.1.2_3_v2.mp3" data-woven="school-ui-shared/widget/audio-player/main@1434"></audio></div><div class="mejs-layers"><div class="mejs-poster mejs-layer" style="display: none; width: 400px; height: 30px;"></div></div><div class="mejs-controls"><div class="mejs-button mejs-playpause-button mejs-play"><button type="button" aria-controls="mep_40" title="Play" aria-label="Play"></button></div><div class="mejs-time mejs-currenttime-container" role="timer" aria-live="off"><span class="mejs-currenttime">00:00</span></div><div class="mejs-time-rail"><span class="mejs-time-total mejs-time-slider" aria-label="Time Slider" aria-valuemin="0" aria-valuemax="NaN" aria-valuenow="0" aria-valuetext="00:00" role="slider" tabindex="0"><span class="mejs-time-buffering" style="display: none;"></span><span class="mejs-time-loaded"></span><span class="mejs-time-current"></span><span class="mejs-time-handle"></span><span class="mejs-time-float"><span class="mejs-time-float-current">00:00</span><span class="mejs-time-float-corner"></span></span></span></div><div class="mejs-time mejs-duration-container"><span class="mejs-duration">00:00</span></div><div class="mejs-button mejs-volume-button mejs-mute"><button type="button" aria-controls="mep_40" title="Mute" aria-label="Mute"></button></div><a href="javascript:void(0);" class="mejs-horizontal-volume-slider mejs-mute" aria-label="Volume Slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-valuetext="80%" role="slider" tabindex="0" style="display: none;"><span class="mejs-offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span><div class="mejs-horizontal-volume-total"></div><div class="mejs-horizontal-volume-current" style="width: 45px;"></div><div class="mejs-horizontal-volume-handle" style="left: 17px;"></div></a></div><div class="mejs-clear"></div></div></div>
+							</div>
+						</div>
+					</div>
+					
+						<div class="ets-text "><span>
+								bank
+							</span></div>
+			</div>
+		</div>
+	</div>
+
+				
+			</div>
+		</div>
+		<div class="ets-act-fce-ft">
+			<div class="ets-act-fce-mic ets-none">
+				<div data-woven="school-ui-activity/shared/asr/asr-ui@1435">
+<div class="ets-act-asr ets-tip" data-at-id="btn-asr-record">
+	<div class="ets-act-playback" data-woven="school-ui-activity/shared/audio/audio-shell@1460"><div class="ets-ap-shell">
+    <div class="ets-ap ets-ap-small">
+        <button data-action="play"></button>
+    </div>
+</div>  </div>
+	<div class="ets-act-asr-button" data-action="record"><div class="ets-act-asr-loading"></div></div>
+	<div class="ets-act-asr-pop ets-tip" data-at-id="pnl-message-asr-tip">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<span data-at-id="lbl-asr-tip-topic" data-blurb-id="512394" data-text-en="Click to record your answer" data-woven="troopjs-ef/blurb/widget@1438">Clique para gravar sua resposta</span>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-message" style="display: none;">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<span data-blurb-id="467533" data-text-en="Wait. Connecting..." data-woven="troopjs-ef/blurb/widget@1439">Espere. Conectando...</span>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-volume" data-at-id="pnl-message-asr-volume">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<span data-at-id="lbl-asr-volume-topic" data-blurb-id="512393" data-text-en="Click to stop recording" data-woven="troopjs-ef/blurb/widget@1440">Clique para parar de gravar</span>
+			<div class="ets-act-asr-indicator"><span></span></div>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-warning-pop ets-warning" data-at-id="pnl-message-asr-warning">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<h4 data-at-id="lbl-asr-warning-topic"></h4>
+			<p data-at-id="lbl-asr-warning-content"></p>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-error-pop ets-error" data-at-id="pnl-message-asr-error">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<h4 data-at-id="lbl-asr-error-topic"></h4>
+			<p data-at-id="lbl-asr-error-content"></p>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-hint-pop ets-hint" data-at-id="pnl-message-asr-hint">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<h4 data-at-id="lbl-asr-hint-topic"></h4>
+			<p data-at-id="lbl-asr-hint-content"></p>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-hint-pop ets-broken" data-at-id="pnl-message-asr-switch-typing">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<h4 data-at-id="lbl-asr-switch-topic"><span data-blurb-id="626862" data-text-en="Sorry, it seems that we have trouble recognizing your voice" data-woven="troopjs-ef/blurb/widget@1441">Desculpe, parece que houve um problema em reconhecer a sua voz</span></h4>
+			<p data-at-id="lbl-asr-switch-content" data-blurb-id="626864" data-text-en="Do you want to try this activity in non-speaking mode instead?" data-woven="troopjs-ef/blurb/widget@1442">Você prefere tentar essa atividade em modo digitação?</p>
+			<div class="ets-btn ets-btn-blue ets-btn-shadowed" data-action="switch" data-at-id="btn-switch-typing-yes">
+				<span data-blurb-id="506853" data-text-en="Yes" data-woven="troopjs-ef/blurb/widget@1443">Sim</span>
+			</div>
+			<div class="ets-btn ets-btn-blue ets-btn-shadowed" data-action="cancel" data-at-id="btn-switch-typing-no">
+				<span data-blurb-id="506854" data-text-en="No" data-woven="troopjs-ef/blurb/widget@1444">Não</span>
+			</div>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-error-pop ets-down" data-at-id="pnl-message-asr-down">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<h4><span data-blurb-id="467530" data-text-en="Speech recognition error" data-woven="troopjs-ef/blurb/widget@1445">Erro no reconhecimento de fala</span></h4>
+			<p>The speech recognition is not working now.</p>
+			<div class="ets-btn-small ets-btn-blue ets-btn-shadowed" data-action="down">
+				<span data-blurb-id="150652" data-text-en="OK" data-woven="troopjs-ef/blurb/widget@1446">OK</span>
+			</div>&nbsp;
+		</div>
+	</div>
+</div></div>
+			</div>
+			<div class="ets-act-fce-typing">
+				<div class="ets-act-fce-typing-box">
+					<div class="ets-input"><input type="text" name="" data-at-id="answer_input" class="ets-act-fce-typing-input">
+						<div data-at-id="submit" class="ets-btn ets-btn-blue ets-btn-large ets-btn-shadowed ets-act-fce-typing-check ets-disabled"><span data-blurb-id="443583" data-text-en="DONE" data-woven="troopjs-ef/blurb/widget@1436">Pronto</span></div>
+					</div>
+					<i class="ets-icon-correct-s"></i> <i class="ets-icon-incorrect-s"></i>
+				</div>
+			</div>
+		</div>
+		<div class="ets-act-fce-ctrl">
+			<div class="ets-bd">
+				<div data-at-id="btn-skip" class="ets-act-fce-btn ets-act-btn-skip ets-btn-skip"><span data-blurb-id="450011" data-text-en="Skip" data-woven="troopjs-ef/blurb/widget@1437">Pular</span></div>
+				<div class="ets-act-fce-number">
+					<span class="ets-act-fce-number-current">3</span> / <span class="ets-act-fce-number-total">9</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Activity Summary Start-->
+	<div class="ets-act-summary-wrap"></div>
+	<!-- Activity Summary End-->
+</div>
+
+
+</div></div>
+<div class="ets-act-bd-ft" data-woven="school-ui-activity/shared/question-number/main@1421"></div></div></div>
+	<div class="ets-act-epaper">
+		<div class="ets-act-bd-epaper"></div>
+	</div>
+</div>
+<div class="ets-act-ft"></div></div></div>
+	</div>
+
+	<div class="ets-ui-acc-ft">
+		<div class="ets-act-live-chat" data-woven="school-ui-activity-container/widget/plugin/live-chat/main@158"></div>
+		<div class="ets-ui-acc-ft-main" data-woven="school-ui-activity-container/widget/activity/bottom-bar/main@129">
+
+<div class="ets-btn ets-btn-purple ets-btn-large ets-btn-shadowed ets-btn-fn-check ets-disabled" data-action="check" data-at-id="btn-check-answer" data-at-enable="false">
+	<span data-blurb-id="450316" data-text-en="CHECK MY ANSWER" data-woven="troopjs-ef/blurb/widget@138">Confira a resposta</span>
+</div>
+<div class="ets-btn ets-btn-blue ets-btn-large ets-btn-shadowed ets-btn-fn-retry ets-disabled" data-action="retry" data-at-id="btn-retry" data-at-enable="false">
+	<span data-blurb-id="450051" data-text-en="RETRY" data-woven="troopjs-ef/blurb/widget@139">TENTAR DE NOVO</span>
+</div>
+<div class="ets-btn ets-btn-green ets-btn-large ets-btn-shadowed ets-btn-fn-next ets-disabled" data-action="nextQues" data-at-id="btn-next-question" data-at-enable="false">
+	<span data-blurb-id="450052" data-text-en="NEXT" data-woven="troopjs-ef/blurb/widget@140">PRÓXIMO</span>
+</div>
+<div class="ets-btn ets-btn-green ets-btn-large ets-btn-shadowed ets-btn-fn-save ets-disabled" data-action="save" data-at-id="save" data-at-enable="false">
+	<span data-blurb-id="443583" data-text-en="DONE" data-woven="troopjs-ef/blurb/widget@141">Pronto</span>
+</div>
+<div class="ets-btn ets-btn-green ets-btn-large ets-btn-shadowed ets-btn-fn-submit ets-disabled" data-action="submit" data-at-id="btn-submit" data-at-enable="false">
+	<span data-blurb-id="150622" data-text-en="SUBMIT" data-woven="troopjs-ef/blurb/widget@142">Enviar</span>
+</div>
+<div class="ets-btn ets-btn-green ets-btn-large ets-btn-shadowed ets-btn-fn-done ets-disabled" data-action="done" data-at-id="btn-done" data-at-enable="false">
+	<span data-blurb-id="443583" data-text-en="DONE" data-woven="troopjs-ef/blurb/widget@143">Pronto</span>
+</div>
+<div class="ets-btn ets-btn-green ets-btn-large ets-btn-shadowed ets-btn-fn-move ets-disabled ets-show" data-action="next" data-type="button" data-at-id="btn-next" data-at-enable="false">
+	<span data-blurb-id="450052" data-text-en="NEXT" data-woven="troopjs-ef/blurb/widget@144">PRÓXIMO</span>
+</div></div>
+	</div>
+
+	<div class="ets-ui-acc-loading" data-at-id="global-loading" data-at-status="unshown">
+		<div class="ets-ui-acc-loading-main">
+			<div class="ets-ui-acc-loading-backdrop"></div>
+			<div class="ets-ui-acc-loading-content">
+				<div class="ets-ui-acc-loading-icon"><span></span></div>
+				<div class="ets-ui-acc-loading-timeout">
+					<div class="ets-bd">
+						<h3><span data-blurb-id="463704" data-text-en="An error has occurred." data-woven="troopjs-ef/blurb/widget@130">Ocorreu um erro.</span></h3>
+						<p><span data-blurb-id="463688" data-text-en="Please try again later." data-woven="troopjs-ef/blurb/widget@131">Por favor, tente de novo mais tarde.</span></p>
+					</div>
+					<div class="ets-ft">
+						<div class="ets-btn ets-btn-purple ets-btn-shadowed"><span data-blurb-id="462940" data-text-en="Close" data-woven="troopjs-ef/blurb/widget@132">Fechar</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+		<div class="ets-asr-show" data-action="enable" data-woven="school-ui-activity/shared/asr/asr-init@153"></div>
+		<div class="ets-ui-tts" data-z-index="1100" data-ccl="school.courseware.e12.enableTTS" data-woven="troopjs-ef/ccl/placeholder@122"></div>
+		<div data-woven="school-ui-shared/plugins/techcheck/main@123"><div class="gud tck-ui" data-woven="techcheck-ui/widget/container/main@159"></div></div>
+		<script type="text/javascript">
+			window.tfgl = true;
+		</script>
+		<script type="text/javascript">
+			var require = (function() {
+
+				return {
+					
+					"baseUrl": "https://learn.corporate.ef.com/",
+					"paths": {
+						"get-env-config": "_shared/@ef/get-env-config/0.0.1/index"
+					},
+					"deps": ["get-env-config"],
+					
+					"callback" : function (getEnvConfig) {
+
+						var partnerCCL;
+
+						
+						partnerCCL = '';
+						
+
+						var config = {
+							"app-version":{
+								"school-ui-activity": "{CCL:school.ui.activity.version}",
+								"school-ui-activity-container": "{CCL:school.ui.activity.container.version}",
+								"school-ui-shared": "{CCL:school.ui.shared.version}",
+								"school-ui-studyplan": "{CCL:school.ui.studyplan.version}",
+								"campus-studyplan-ui": "{CCL:campus-studyplan-ui.version}"
+							},
+							
+							"cacheServer": "https://learn.corporate.ef.com"
+						};
+
+						
+
+						
+						var endpoints = getEnvConfig("endpoints")
+						var paths = getEnvConfig("paths")
+
+						config["app-version"]["school-ui-activity"] = "";
+						config["app-version"]["school-ui-activity-container"] = "";
+						config["app-version"]["school-ui-shared"] = "";
+						config["app-version"]["school-ui-studyplan"] = "";
+						config["app-version"]["campus-studyplan-ui"] = "";
+						config["exportPdfUrl"] = endpoints.exportPdfUrl || "/api/school-proxy/v1/commands/export/pdf";
+						
+
+
+						// the version of requirejs we use here doesn't deep merge
+						// calls for require.config({config: {}})
+						// so we have to do it manually and only call once require.config({config:{}})
+						var troop2ModulesConfig = {
+							
+							"school-ui": config,
+							"school-ui-activity": config,
+							"school-ui-activity-container": config,
+							"school-ui-activity-container/widget/activity/activity-manager/main": config,
+							"school-ui-shared/module": config,
+							"troopjs-data/query/service": {
+								"url" : "/services/shared/queryproxy",
+								"type" : "post"
+							},
+							
+							"school-ui-studyplan/module": {
+								"cacheServer": config["cacheServer"],
+								"certUrl": endpoints.certUrl || "/study/certificate?key=",
+								"blurbIds": {
+									"cpNextUnit": "719648",
+									"cpCourseChange": "701906"
+								},
+								"changeCourseUrl": paths.changeCourse,
+								"progressReportUrl": paths.progressReport,
+								"progressGoals": paths.progressGoals,
+								"levelTestPath": paths.levelTest,
+								"useLegacyUnitId": false
+							},
+							"techcheck-ui/widget/shared/live-chat/main": paths,
+							"school-ui-shared/widget/unit-overview/container/main": {
+								"showDownloadButton": false
+							},
+							
+						};
+						var troop1ModulesConfig = {
+							"school-ui": config,
+							"school-ui-shared/module": config,
+							"client-state/adapters/context" : {
+								data : {
+									
+									"page.name"				: "Study Plan",
+									"page.siteSection"		: "Course",
+									"page.siteSubSection"	: "Online Study"
+								}
+							}
+						};
+
+
+						var deps1x = [
+						];
+						var deps2x = [
+							"livechat-ui"
+						];
+						if (!config.debug) {
+							deps1x.push("school-ui-shared");
+							deps1x.push("tooltips-ui");
+							deps1x.push("when");
+
+							deps2x.push("techcheck-ui");
+							deps2x.push("school-ui-activity");
+							deps2x.push("school-ui-activity-container");
+							deps2x.push("school-ui-shared");
+							deps2x.push("school-ui-studyplan");
+							deps2x.push("campus-studyplan-ui");
+
+							if(partnerCCL && partnerCCL.name){
+								deps2x.push(partnerCCL.name);
+							}
+						}
+
+						var callbacks = [];
+
+						require.config({
+							"context" : "troopjs-1.0",
+
+							"waitSeconds": 0,
+
+							"baseUrl": "https://learn.corporate.ef.com/",
+
+							"packages": [
+								
+								{
+									"name": "school-ui-shared",
+									"location": "new-studyplan/static//school-ui-shared/js/1.x",
+									"main": "app-built.min"
+								},
+								
+								{
+									"name": "legacy/translator",
+									"location": "school/_scripts",
+									"main": "translator.min"
+								},
+								{
+									"name": "tooltips-ui",
+									"location": "_shared/tooltips-ui/0.5.6/js",
+									"main": "app-built.min"
+								},
+								{
+									"name": "troopjs-bundle",
+									"location": "_shared/troopjs-bundle/1.0.9-16",
+									"main": "troopjs-bundle.min"
+								},
+								{
+									"name": "troopjs-ef",
+									"location": "_shared/troopjs-ef/1.0.0-78",
+									"main": "nodeps"
+								},
+								{
+									"name": "jquery",
+									"location": "_shared/jquery/1.7.2",
+									"main": "jquery.min"
+								},
+								{
+									"name": "jquery-jsonp",
+									"location": "_shared/jquery-jsonp/2.1.4",
+									"main": "jquery-jsonp.min"
+								},
+								{
+									"name": "jquery.easing",
+									"location": "_shared/jquery-easing/1.3",
+									"main": "jquery.easing.min"
+								},
+								{
+									"name": "jquery.mousewheel",
+									"location": "_shared/jquery-mousewheel/3.0.6",
+									"main": "jquery.mousewheel.min"
+								},
+								{
+									"name": "jquery.ui",
+									"location": "_shared/jquery-ui/1.8.22",
+									"main": "jquery-ui.min"
+								},
+								{
+									"name": "jquery.transit",
+									"location": "_shared/jquery-transit/0.1.3",
+									"main": "jquery.transit.min"
+								},
+								{
+									"name": "jquery.jscrollpane",
+									"location": "_shared/jquery-jscrollpane/2.0.0b12",
+									"main": "jquery.scrollpane.min"
+								},
+								{
+									"name": "jquery.scrollto",
+									"location": "_shared/jquery-scrollto/1.4.2",
+									"main": "jquery.scrollto.min"
+								},
+								{
+									"name": "jquery.viewport",
+									"location": "_shared/jquery-viewport/1.0",
+									"main": "jquery.viewport.min"
+								},
+								{
+									"name": "jquery.flip",
+									"location": "_shared/jquery-flip/0.9.10-shim",
+									"main": "jquery.flip.min"
+								},
+								{
+									"name": "jquery.form",
+									"location": "_shared/jquery-form/3.20",
+									"main": "jquery.form.min"
+								},
+								{
+									"name": "swfobject",
+									"location": "_shared/swfobject/2.2",
+									"main": "swfobject.min"
+								},
+								{
+									"name": "base64",
+									"location": "_shared/ScriptSharp/0.5.6",
+									"main": "base64-amd.min"
+								},
+								{
+									"name": "underscore",
+									"location": "_shared/underscore.js/1.3.3",
+									"main": "underscore.min"
+								},
+								{
+									"name": "gollum",
+									"location": "_shared/gollum/1.0.0-3",
+									"main": "gollum.min"
+								},
+								{
+									"name": "string.split",
+									"location": "_shared/string-split/0",
+									"main": "string-split.min"
+								},
+								{
+									"name": "tooltip",
+									"location": "_shared/tooltip/0",
+									"main": "tooltip.min"
+								},
+								{
+									"name": "jquery.counter",
+									"location": "_shared/jquery-counter/2.2",
+									"main": "jquery.counter.min"
+								},
+								{
+									"name": "mediaelement-and-player",
+									"location": "_shared/mediaelement/2.22",
+									"main": "mediaelement-and-player.min"
+								},
+								{
+									"name": "mediaelement-plugin-ef",
+									"location": "_shared/mediaelement-plugin-ef/1.0.2",
+									"main": "app-built.min"
+								},
+								{
+									"name": "markdownjs",
+									"location": "_shared/markdown-js/0.4.0",
+									"main": "markdown.min"
+								},
+								{
+									"name": "jquery-tipsy",
+									"location": "_shared/jquery-tipsy/1.0.0a-refined/javascripts",
+									"main": "jquery.tipsy.min"
+								},
+								{
+									"name": "json2",
+									"location": "_shared/json2/20111019",
+									"main": "json2.min"
+								},
+								{
+									"name": "Cookies",
+									"location": "_shared/Cookies/0.3.1",
+									"main": "cookies.min"
+								},
+								{
+									"name": "poly",
+									"location": "_shared/poly/0.5.1-43-ef.1",
+									"main": "poly-bundle.min"
+								},
+								{
+									"name": "client-tracking",
+									"location": "_shared/client-tracking/1.0.18",
+									"main": "bundle-troopjs.min"
+								},
+								{
+									"name": "when",
+									"location": "_shared/when/3.7.7-ef.1",
+									"main": "when-bundle.min"
+								},
+								{
+									"name": "jquery.fancybox",
+									"location": "_shared/fancybox/1.3.4-ef.1",
+									"main": "jquery.fancybox.min"
+								},
+								{
+									"name": "moment",
+									"location": "_shared/moment/2.10.3",
+									"main": "moment-with-locales.min"
+								},
+								{
+									"name": "jquery.countdown",
+									"location": "_shared/jquery.countdown/2.1.0",
+									"main": "jquery.countdown.min"
+								},
+								{
+									"name": "jquery.scrollbar",
+									"location": "_shared/jquery-scrollbar/3.1.13",
+									"main": "jquery.mCustomScrollbar.min"
+								},
+								{
+									"name": "asr-core",
+									"location": "_shared/asr-core/1.2.0",
+									"main": "main.min"
+								}
+							],
+
+							"shim" : {
+								"json2" : {
+									exports : function () {
+										return window.JSON;
+									}
+								},
+								"jquery.fancybox" : {
+									deps :[ "jquery", "jquery.easing", "jquery.mousewheel" ],
+									exports : function ($, easing, mousewheel) {
+										return $;
+									}
+								},
+								"jquery.easing" : {
+									deps :[ "jquery" ],
+									exports : function ($) {
+										return $;
+									}
+								},
+								"jquery.mousewheel" :  {
+									deps :[ "jquery" ],
+									exports : function ($) {
+										return $;
+									}
+								},
+								"jquery.scrollto": {
+									deps: ["jquery"],
+									exports: function($) {
+										return $;
+									}
+								},
+								"jquery.viewport": {
+									deps: ["jquery"],
+									exports: function($) {
+										return $;
+									}
+								},
+								"mediaelement-and-player": {
+									deps: ["jquery"],
+									exports: function () {
+										return window.mejs;
+									}
+								},
+								"jquery.ui": {
+									deps: ["jquery"],
+									exports: function($){
+										return $;
+									}
+								},
+								"jquery.transit" : ["jquery"],
+								"jquery.flip":{
+									deps: ["jquery"],
+									exports: function($){
+										return $;
+									}
+								},
+								"underscore": {
+									exports: function(){
+										return _;
+									}
+								},
+								'jquery.counter': {
+									deps :[ "jquery" ],
+									exports : function ($) {
+										return $;
+									}
+								},
+								"jquery.form": {
+									deps: ['jquery'],
+									exports: function ($) {
+										return $;
+									}
+								},
+								"swfobject": {
+									exports: function () {
+										return window.swfobject;
+									}
+								},
+								"markdownjs": {
+									exports: function () {
+										return window.markdown;
+									}
+								},
+								"jquery-tipsy": {
+									deps: ['jquery'],
+									exports: function($) {
+										return $;
+									}
+								},
+								"client-tracking": {
+									deps: ["troopjs-ef"]
+								}
+							},
+
+							"map" : {
+								"*" : {
+									"template" : "troopjs-requirejs/template",
+									"logger" : "troopjs-core/logger/pubsub",
+									"config" : "troopjs-ef/config"
+								}
+							},
+
+							"deps": ["require", "jquery", "poly", "troopjs-bundle", "troopjs-ef"],
+
+							"config": troop1ModulesConfig,
+
+							"callback" : function (localRequire, jQuery) {
+
+								define("jquery.mediaelement.player",
+										["jquery", "mediaelement-and-player"],
+										function ($) {
+											
+											return $;
+										});
+
+								define("jquery.mediaelement",
+										["jquery", "mediaelement-and-player"],
+										function ($) {
+											
+											return $;
+										});
+
+
+								localRequire([ "config" ].concat(deps1x), function (_config) {
+
+									jQuery.extend(_config, config);
+
+									localRequire([
+										"troopjs-ef/widget/application",
+										"troopjs-ef/data/cache",
+										"troopjs-ef/service/query",
+										"troopjs-core/remote/ajax",
+										"troopjs-jquery/weave",
+										"troopjs-jquery/destroy",
+										"troopjs-jquery/action",
+										"troopjs-jquery/resize",
+										"troopjs-jquery/dimensions",
+										"troopjs-jquery/hashchange",
+										"client-tracking"
+									], function (Application, Cache, Query, Ajax) {
+											Ajax().start();
+											Query(Cache());
+//										callbacks.push(function () {
+//											Application(jQuery("html"), "bootstrap").start();
+//										});
+									});
+								});
+							}
+						});
+
+						require.config({
+							"context" : "troopjs-2.0",
+
+							"waitSeconds": 0,
+
+							"baseUrl": "https://learn.corporate.ef.com/",
+
+							"packages": [
+								
+								{
+									"name": "school-ui-shared",
+									"location": "new-studyplan/static//school-ui-shared/js/2.x",
+									"main": "app-built.min"
+								},
+								{
+									"name": "school-ui-studyplan",
+									"location": "new-studyplan/static//school-ui-studyplan-b2b/js",
+									"main": "app-built.min"
+								},
+								{
+									"name": "school-ui-activity",
+									"location": "new-studyplan/static//school-ui-activity/js",
+									"main": "app-built.min"
+								},
+								{
+									"name": "school-ui-activity-container",
+									"location": "new-studyplan/static//school-ui-activity-container/js",
+									"main": "app-built.min"
+								},
+								{
+									"name": "campus-studyplan-ui",
+									"location": "iframed-study/1.0.7/campus-studyplan-ui/js",
+									"main": "app-built.min"
+								},
+								
+								{
+									"name": "techcheck-ui",
+									"location": "new-studyplan/static//techcheck-ui/js",
+									"main": "app-built.min"
+								},
+								{
+									"name": partnerCCL && partnerCCL.name ? partnerCCL.name : "",
+									"location": partnerCCL && partnerCCL.name ? (partnerCCL.location + "/" + (partnerCCL.version ? partnerCCL.version : "snapshot") + "/" + "js") : "",
+									"main": "app-built.min"
+								},
+								{
+									"name": "troopjs-bundle",
+									"location": "_shared/troopjs-bundle/2.0.2-8-ef.4",
+									"main": "maxi.min"
+								},
+								{
+									"name": "troopjs-ef",
+									"location": "_shared/troopjs-ef/2.0.2-ef.5",
+									"main": "nodeps"
+								},
+								{
+									"name": "jquery",
+									"location": "_shared/jquery/1.9.1",
+									"main": "jquery-1.9.1.min"
+								},
+								{
+									"name": "jquery.gudstrap",
+									"location": "_shared/gudstrap/1.1.1-ef.1/js",
+									"main": "gudstrap.min"
+								},
+								{
+									"name": "jquery-jsonp",
+									"location": "_shared/jquery-jsonp/2.1.4",
+									"main": "jquery-jsonp.min"
+								},
+								{
+									"name": "poly",
+									"location": "_shared/poly/0.5.1-43-ef.1",
+									"main": "poly-bundle.min"
+								},
+								{
+									"name": "Cookies",
+									"location": "_shared/Cookies/0.3.1",
+									"main": "cookies.min"
+								},
+								{
+									"name": "jquery.easing",
+									"location": "_shared/jquery-easing/1.3",
+									"main": "jquery.easing.min"
+								},
+								{
+									"name": "jquery.mousewheel",
+									"location": "_shared/jquery-mousewheel/3.0.6",
+									"main": "jquery.mousewheel.min"
+								},
+								{
+									"name": "jquery.ui",
+									"location": "_shared/jquery-ui/1.12.1",
+									"main": "jquery-ui.min"
+								},
+								{
+									"name": "jquery.ui.touch-punch",
+									"location": "_shared/jquery.ui.touch-punch/0.2.3",
+									"main": "jquery.ui.touch-punch.min"
+								},
+								{
+									"name": "jquery.transit",
+									"location": "_shared/jquery-transit/0.1.3",
+									"main": "jquery.transit.min"
+								},
+								{
+									"name": "jquery.jscrollpane",
+									"location": "_shared/jquery-jscrollpane/2.0.0b12",
+									"main": "jquery.scrollpane.min"
+								},
+								{
+									"name": "jquery.scrollto",
+									"location": "_shared/jquery-scrollto/1.4.2",
+									"main": "jquery.scrollto.min"
+								},
+								{
+									"name": "jquery.viewport",
+									"location": "_shared/jquery-viewport/1.0",
+									"main": "jquery.viewport.min"
+								},
+								{
+									"name": "jquery.flip",
+									"location": "_shared/jquery-flip/0.9.10-shim",
+									"main": "jquery.flip.min"
+								},
+								{
+									"name": "jquery.form",
+									"location": "_shared/jquery-form/3.20",
+									"main": "jquery.form.min"
+								},
+								{
+									"name": "swfobject",
+									"location": "_shared/swfobject/2.2",
+									"main": "swfobject.min"
+								},
+								{
+									"name": "base64",
+									"location": "_shared/ScriptSharp/0.5.6",
+									"main": "base64-amd.min"
+								},
+								{
+									"name": "underscore",
+									"location": "_shared/underscore.js/1.3.3",
+									"main": "underscore.min"
+								},
+								{
+									"name": "gollum",
+									"location": "_shared/gollum/1.0.0-3",
+									"main": "gollum.min"
+								},
+								{
+									"name": "string.split",
+									"location": "_shared/string-split/0",
+									"main": "string-split.min"
+								},
+								{
+									"name": "jquery.counter",
+									"location": "_shared/jquery-counter/2.2",
+									"main": "jquery.counter.min"
+								},
+								{
+									"name": "markdownjs",
+									"location": "_shared/markdown-js/0.4.0",
+									"main": "markdown.min"
+								},
+								{
+									"name": "jquery-tipsy",
+									"location": "_shared/jquery-tipsy/1.0.0a-refined/javascripts",
+									"main": "jquery.tipsy.min"
+								},
+								{
+									"name": "json2",
+									"location": "_shared/json2/20111019",
+									"main": "json2.min"
+								},
+								{
+									"name" : "when",
+									"location": "_shared/when/3.7.7-ef.1",
+									"main": "when-bundle.min"
+								},
+								{
+									"name" : "moment",
+									"location": "_shared/moment/2.2.1",
+									"main": "moment_langs.min"
+								},
+								{
+									"name": "jquery.fancybox",
+									"location": "_shared/fancybox/2.1.5",
+									"main": "jquery.fancybox.min"
+								},
+								{
+									"name" : "text",
+									"location" : "_shared/requirejs-text/2.0.9-ef.1",
+									"main": "text.min"
+								},
+                                {
+                                    "name": "jquery.cookie",
+                                    "location": "_shared/jquery-cookie/1.3.1",
+                                    "main": "jquery.cookie.min"
+                                },
+                                {
+                                    "name": "livechat-ui",
+                                    "location": "_shared/livechat-ui/0.0.7/js/standalone",
+                                    "main": "app-built.min"
+                                },
+								{
+									'name': 'lodash',
+									'location': '_shared/lodash/3.10.0',
+									'main': 'lodash'
+								},
+								{
+									'name': 'jquery.countdown',
+									'location': '_shared/jquery.countdown/2.1.0',
+									'main': 'jquery.countdown'
+								},
+								{
+									"name": "jquery.validate",
+									"location": "_shared/jquery-validation/1.13.1",
+									"main": "jquery.validate.min"
+								}
+							],
+
+							
+							"paths": {
+								"b2b-fe-auth": "_shared/b2b-fe-auth/1.0.12/index"
+							},
+							
+
+							"shim" : {
+								"json2" : {
+									exports : function () {
+										return window.JSON;
+									}
+								},
+								"jquery.fancybox" : {
+									deps :[ "jquery", "jquery.easing", "jquery.mousewheel" ],
+									exports : function ($, easing, mousewheel) {
+										return $;
+									}
+								},
+								"jquery.gudstrap":  {
+									deps :[ "jquery" ],
+									exports : function ($) {
+										return $;
+									}
+								},
+								"jquery.easing" : {
+									deps :[ "jquery" ],
+									exports : function ($) {
+										return $;
+									}
+								},
+								"jquery.mousewheel" :  {
+									deps :[ "jquery" ],
+									exports : function ($) {
+										return $;
+									}
+								},
+								"jquery.scrollto": {
+									deps: ["jquery"],
+									exports: function($) {
+										return $;
+									}
+								},
+								"jquery.viewport": {
+									deps: ["jquery"],
+									exports: function($) {
+										return $;
+									}
+								},
+								"jquery.ui": {
+									deps: ["jquery"],
+									exports: function($){
+										return $;
+									}
+								},
+								"jquery.ui.touch-punch": {
+									deps: ["jquery.ui"],
+									exports: function ($) {
+										return $;
+									}
+								},
+								"jquery.transit" : ["jquery"],
+								"jquery.flip":{
+									deps: ["jquery"],
+									exports: function($){
+										return $;
+									}
+								},
+								"underscore": {
+									exports: function(){
+										return _;
+									}
+								},
+								'jquery.counter': {
+									deps :[ "jquery" ],
+									exports : function ($) {
+										return $;
+									}
+								},
+								"jquery.form": {
+									deps: ['jquery'],
+									exports: function ($) {
+										return $;
+									}
+								},
+								"swfobject": {
+									exports: function () {
+										return window.swfobject;
+									}
+								},
+								"markdownjs": {
+									exports: function () {
+										return window.markdown;
+									}
+								},
+								"jquery-tipsy": {
+									deps: ['jquery'],
+									exports: function($) {
+										return $;
+									}
+								},
+								"moment": {
+									exports: function() {
+										return window.monent;
+									}
+								},
+								"when": {
+									deps: ["poly"]
+								}
+							},
+
+							"deps" : ["require", "when", "lodash", "poly", "troopjs-bundle", "troopjs-ef"],
+
+							"map" : {
+								"*" : {
+									"mv" : "troopjs-requirejs/multiversion",
+									"template" : "troopjs-requirejs/template",
+									"shadow" : "troopjs-requirejs/shadow",
+									"jquery" : "troopjs-jquery/noconflict",
+									"logger" : "troopjs-core/logger/pubsub"
+								},
+
+								"troopjs-jquery/noconflict" : {
+									"jquery" : "jquery"
+								}
+							},
+
+							"callback" : function (localRequire, when, _) {
+								var initPromise = when.resolve();
+
+								
+								initPromise = when.promise(function(resolve){
+									
+									localRequire(["b2b-fe-auth"], function (B2BFeAuth) {
+										var authConfig = _.merge({
+											autoStart: true,
+											autoRedirect: true,
+											oAuth: {
+												endpoint: "https://qa.learn.corporate.ef.com/login/v1/login/oauth2/initiate",
+												responseType: "token",
+												clientId: "platform-client",
+												providers: {
+													facebook: true,
+													google: true,
+													linkedin: true,
+													wechat: false
+												},
+												scope: "",
+												redirectUri: window.location.href.replace(window.location.hash, ""), // tell efid to redirect back to this page
+												logout: {
+													endpoint: "http://efid.vagrant.f8/oauth2/v1/logout",
+													redirectUri: window.location.href.replace(window.location.hash, ""), // tell efid to redirect back to this page
+												}
+											},
+											account: {
+												endpoint: endpoints.accountService || "/api/account/v1/accounts",
+												schoolId: "b2c.englishlive"
+											},
+											queryproxy: {
+												endpoint: endpoints.queryproxy || "/api/school-proxy/v1/troop"
+											},
+											storage: {
+												key: "efid_tokens" // cookie name
+											}
+										}, getEnvConfig("platformAuth"));
+
+										// B2BFeAuth
+										B2BFeAuth.getPlatformAuth(authConfig).then(function(PlatformAuth){
+											var tokensEmitter = PlatformAuth;
+
+											// the headers will be passed with this object to all modules
+											// which need the http headers. whenever new tokens are
+											// available, we'll *modify* this object, instead of creating
+											// a new one. currently our modules don't support updating
+											// their configuration dynamically, so we rely on the fact
+											// all the modules use this object by reference every time
+											// they make an ajax request.
+											var httpHeaders = {};
+
+											function setHttpHeaders (tokens) {
+												httpHeaders["Authorization"] = "Bearer " + tokens.access;
+												httpHeaders["X-EF-Access"] = tokens.account;
+											}
+
+											document.addEventListener("platform-auth.logout", function () {
+												tokensEmitter.logout();
+											});
+
+											tokensEmitter.on("tokens", function (tokens) {
+												setHttpHeaders(tokens);
+											});
+
+											tokensEmitter.once("tokens", function (tokens) {
+												setHttpHeaders(tokens);
+
+												// configure the query service:
+												troop2ModulesConfig["troopjs-data/query/service"] = {
+													"url" : endpoints.queryproxy || "/api/school-proxy/v1/troop",
+													"type" : "post",
+													// these headers are needed by the new platform's query proxy:
+													"headers": httpHeaders
+												};
+
+												troop2ModulesConfig["school-ui-activity/shared/asr/asr-service"] = {
+													"asrEvalzipPathPrefix" : endpoints.asrEvalzipPathPrefix
+												};
+
+												// configure the client-state query service:
+												troop1ModulesConfig["client-state/adapters/query"] = {
+													"url" : endpoints.queryproxy || "/api/school-proxy/v1/troop",
+													"type" : "post",
+													// these headers are needed by the new platform's query proxy:
+													"headers": httpHeaders
+												};
+
+												// configure each new instance of the command service to include the headers:
+												localRequire(["troopjs-core/component/service", "troopjs-ef/command/service"], function (Service, CommandService) {
+													Service.create({
+														"displayName" : "platform-auth/tokens/injector",
+														"hub/registry/add" : function onAdd(service) {
+															if (service.constructor === CommandService) {
+																service.configure({
+																	"headers": httpHeaders
+																});
+															}
+														}
+													}).start();
+
+													resolve();
+												});
+											});
+											}); // end platform-auth localRequire
+										});
+								});
+								
+
+								initPromise.then(bootstrapApplication);
+
+								function bootstrapApplication () {
+									// apply modules configuration:
+									require.config({
+										"context": "troopjs-2.0",
+										"config": troop2ModulesConfig
+									});
+									require.config({
+										"context": "troopjs-1.0",
+										"config": troop1ModulesConfig
+									});
+									localRequire([
+										"jquery",
+										"school-ui-shared/utils/browser-check",
+										"mv!client-tracking#troopjs-1.0",
+										"mv!troopjs-bundle#troopjs-1.0"
+									].concat(deps2x), function (jQuery, browserCheck, ct) {
+
+										if (browserCheck.browser !== "msie") {
+											// "when/monitor/console" too slow on IE, causes issues with Flash
+											localRequire(["when/monitor/console"], function(){
+												// noop
+											});
+										}
+
+										localRequire(["mv!client-state#troopjs-1.0"], function(cs){
+
+											define('client-tracking', ct);
+											define('client-state', cs);
+
+											define("jquery.mediaelement", [
+												"mv!mediaelement-and-player#troopjs-1.0"
+											], function (mejs) {
+												
+												return mejs;
+											});
+
+											define("mediaelement-and-player", [
+												"mv!mediaelement-and-player#troopjs-1.0"
+											], function (mejs) {
+												return mejs;
+											});
+
+											define("mediaelement-plugin-ef", [
+												"mv!mediaelement-plugin-ef#troopjs-1.0"
+											], function (mejsPlugin) {
+												return mejsPlugin;
+											});
+
+											define("asr-core", ["mv!asr-core#troopjs-1.0"], function(asrCore) {
+												return asrCore;
+											});
+
+											var JQUERY_LIBS = [
+												"jquery.easing",
+												"jquery.scrollto",
+												"jquery.jscrollpane",
+												"jquery.flip",
+												"jquery.counter",
+												"jquery.form",
+												"jquery.transit",
+												'jquery.mousewheel',
+												'jquery.fancybox'
+											];
+											JQUERY_LIBS.forEach(function (jqueryLibName) {
+												define(jqueryLibName, [
+													"shadow!" + jqueryLibName + "#$=jquery&jQuery=jquery&exports=jQuery"
+												], function ($) {
+													return $;
+												});
+											});
+
+											// Have gudstrap depend jquery.ui to override $.fn.tooltip
+											// Have gudstrap depend jquery.transit to override $.support.transition
+											define('jquery.gudstrap', [
+												"shadow!jquery.gudstrap#" + [
+													"$=jquery",
+													"jQuery=jquery",
+													"depJqueryUI=jquery.ui",
+													"depJqueryTransit=jquery.transit",
+													"exports=jQuery"
+												].join('&')
+											], function($) {
+												return $;
+											});
+
+											//fix missing "var" for local variables in jquery.viewport
+											define("jquery.viewport", [
+												"shadow!jquery.viewport#" + [
+													"$=jquery",
+													"jQuery=jquery",
+													"paddingTop=jquery",
+													"paddingBottom=jquery",
+													"paddingLeft=jquery",
+													"paddingRight=jquery",
+													"exports=jQuery"
+												].join('&')
+											], function($) {
+												return $;
+											});
+
+											define('jquery.ui.touch-punch', [
+												"shadow!jquery.ui.touch-punch#" + [
+													"$=jquery",
+													"jQuery=jquery",
+													'$ui=jquery.ui',
+													"exports=jQuery"
+												].join('&')
+											], function($) {
+												return $;
+											});
+
+											define("compose", ["mv!compose#troopjs-1.0"], function(v1Compose) {
+												return v1Compose;
+											});
+
+											localRequire([
+												"troopjs-browser/application/widget",
+												"troopjs-core/pubsub/proxy/to1x",
+												"mv!troopjs-core/pubsub/hub#troopjs-1.0",
+												"troopjs-browser/ajax/service",
+												"troopjs-data/query/service",
+												"troopjs-data/cache/component",
+												"troopjs-core/pubsub/hub",
+												"troopjs-browser/route/widget",
+												"school-ui-shared/service/popcache",
+												"troopjs-ef/service/config",
+												"school-ui-shared/service/context",
+												"school-ui-studyplan/service/load",
+												"school-ui-studyplan/service/republish",
+												"troopjs-core/logger/service",
+												"troopjs-ef/logger/widget",
+												"troopjs-ef/logger/appender/filter_ccl",
+												"troopjs-ef/logger/appender/command",
+												"logger",
+												"troopjs-jquery/loom",
+												"campus-studyplan-ui/service/load",
+												//use troopjs1.0 version temporary for techcheck
+												"mv!mediaelement-and-player#troopjs-1.0"
+											], function (
+												Application,
+												HubProxy,
+												v1Hub,
+												AjaxService,
+												QueryService,
+												Cache,
+												Hub,
+												RouteWidget,
+												Popcache,
+												ConfigService,
+												ContextService,
+												LoadService,
+												RepublishService,
+												LogService,
+												LogWidget,
+												LogFilter,
+												LogCommand,
+												Logger,
+												Loom,
+												CampusService,
+												mejs
+											) {
+
+												var UNHANDLED_AJAX_ERROR_URL = '_unhandledAjaxErrorUrl';
+												jQuery(document).on('ajaxSend', function (event, jqXHR, ajaxSettings) {
+													jqXHR[UNHANDLED_AJAX_ERROR_URL] = ajaxSettings.url;
+												});
+
+												function safeStringifyReason(reason) {
+													if (reason.message) {
+														return reason.message;
+													}
+													var message = String(reason);
+													if (message !== '[object Object]') {
+														return message;
+													}
+													if (UNHANDLED_AJAX_ERROR_URL in reason) {
+														return 'Unhandled Ajax Error' +
+															' url=' + reason[UNHANDLED_AJAX_ERROR_URL] +
+															' readyState=' + reason.readyState +
+															' status=' + reason.status;
+													}
+													try {
+														return JSON.stringify(reason).substring(0, 500);
+													} catch (ignored) {
+														return 'Object with keys: ' +
+															Object.keys(reason).slice(0, 50).join(', ');
+													}
+												}
+
+												function getWhenContextStacks(whenDetail) {
+													if (!whenDetail) {
+														return undefined;
+													}
+													var context = whenDetail.key.context;
+													var stacks = [];
+													while (context) {
+														stacks.push(context.stack);
+														context = context.parent;
+													}
+													return stacks;
+												}
+
+												jQuery(window).on('unhandledrejection unhandledRejection', function (event) {
+													var originalEvent = event.originalEvent;
+													var whenDetail = originalEvent.detail;
+													var reason = originalEvent.reason || (whenDetail && whenDetail.reason);
+													if (reason) {
+														var message = safeStringifyReason(reason);
+														Logger.log({
+															"msg": event.type + ": " + message,
+															"stack": reason.stack,
+															"promiseContext": getWhenContextStacks(whenDetail)
+														});
+														event.preventDefault();
+													}
+												});
+
+												jQuery(function ($) {
+													var cache = Cache();
+
+													var CCL_LOG_ENABLE = "school.courseware.log.enable";
+
+													cs.push("tracking.qubit_enabled", "false".toLowerCase() === "true");
+													cs.push("tracking.omniture_enabled", "false".toLowerCase() === "true");
+													cs.push("tracking.etvt_enabled", "false".toLowerCase() === "true");
+
+													if(partnerCCL && partnerCCL.css && partnerCCL.location && partnerCCL.version){
+														var cssHref = partnerCCL.location + "/" + partnerCCL.version + "/css/" + partnerCCL.css + ".min.css";
+														if(config.cacheServer){
+															cssHref = config.cacheServer + cssHref;
+														}
+														$('head').append('<link rel="stylesheet" type="text/css" href="' + cssHref + '" />');
+													}
+
+													if(partnerCCL && partnerCCL.init){
+														$('<div></div>').attr('data-weave', partnerCCL.init).appendTo('body');
+													}
+
+													var sourceParams = {
+														"devicetypeid": {
+															"value": 1
+														},
+														"productid": {
+															"value": 100
+														}
+													};
+
+													Application(
+														// Application widget should be started with each service running of arguments,
+														// Also service have dependence with each other,
+														// So the service running sequence should be as the special order
+														// After all the service started, troop will start to weave element (the first arguments)
+														$("html"),
+
+														// just a name
+														"bootstrap",
+
+														// hub bridge between troopjs1 and troopjs2
+														HubProxy({
+															"hub" : v1Hub,
+															"publish" : {
+																// form2x : to1x
+																"route" : "route",
+																"load/results": "load/results",
+																"load/enrollment" : "load/enrollment",
+																"load/course" : "load/course",
+																"load/level" : "load/level",
+																"load/unit" : "load/unit",
+																"load/lesson" : "load/lesson",
+																"load/step" : "load/step",
+																"load/activity" : "load/activity",
+																"start/load/activity" : "start/load/activity",
+																"load/step/summary" : "load/step/summary",
+																"context": "context",
+																"activity/retry" : "activity/retry",
+																"activity/submit/score/proxy" : "activity/submit/score/proxy",
+																"activity/next/step" : "activity/next/step",
+																"activity/launcher/open": "activity/launcher/open",
+																"activity/update/progress": "activity/update/progress",
+																"activity-container/bottom-bar/item/completed" : "activity-container/bottom-bar/item/completed",
+																"render/activity/container": "render/activity/container",
+																"activity/check/answer" : "activity/check/answer",
+																"activity-container/scroll" : "activity-container/scroll",
+																"plugins/tech-check/enable": "plugins/tech-check/enable",
+																"asr/ui/setting": "asr/ui/setting",
+																"asr/enable": "asr/enable",
+																"asr/disable": "asr/disable",
+																"asr/ui/playback": "asr/ui/playback",
+																"asr/stopPlayback": "asr/stopPlayback",
+																"asr/startPlayback": "asr/startPlayback",
+																"asr/show/message": "asr/show/message"
+															},
+															"subscribe" : {
+																// form1x : to2x,
+																"query" : "query",
+																"route/uri": "route/uri",
+																"unroute": "unroute",
+																"tooltips/start": {
+																	"topic": "tooltips/start",
+																	"memory": true
+																},
+																"tooltips/finish": {
+																	"topic": "tooltips/finish",
+																	"memory": true
+																},
+																"logger/log": "logger/log",
+																"logger/troopjs1": "logger/troopjs1",
+																"asr/ui/states/changed": "asr/ui/states/changed",
+																"asr/start/record": "asr/start/record",
+																"asr/recording/stopped": "asr/recording/stopped",
+																"audio/shell/play/complete": "audio/shell/play/complete",
+																"school/toggle/overflow": "school/toggle/overflow",
+																"school/progress/SubmitActivityScore": "school/progress/SubmitActivityScore",
+																"school/notebook/AddUserWordGroup": "school/notebook/AddUserWordGroup",
+																"school/notebook/AddWordsToUserWordGroup":"school/notebook/AddWordsToUserWordGroup",
+																"school/enrollment/MoveOnUnit": "school/enrollment/MoveOnUnit",
+																"school/enrollment/Enroll": "school/enrollment/Enroll",
+																"school/member_site_setting/Save": "school/member_site_setting/Save",
+																"school/rating/SubmitRating": "school/rating/SubmitRating",
+																"school/featuresupport/Log": "school/featuresupport/Log",
+																"school/school_event_log/LogActivityEvent": "school/school_event_log/LogActivityEvent",
+																"activity/closed": "activity/closed",
+																"ef/update/progress": "ef/update/progress",
+																"school/tts/SaveMemberSettings": "school/tts/SaveMemberSettings",
+																"school/sharingpicturedescr/SaveAndCropImage": "school/sharingpicturedescr/SaveAndCropImage",
+																"school/sharingpicturedescr/LoadSharedPictureDescrs": "school/sharingpicturedescr/LoadSharedPictureDescrs",
+																"school/sharingpicturedescr/LoadCurrentUserInfo": "school/sharingpicturedescr/LoadCurrentUserInfo",
+																"activity/prop/changed/completed":"activity/prop/changed/completed",
+																"activity/prop/changed/index":"activity/prop/changed/index",
+																"activity/prop/changed/length":"activity/prop/changed/length",
+																"activity/prop/changed/type":"activity/prop/changed/type",
+																"activity/item/prop/changed/answered":"activity/item/prop/changed/answered",
+																"activity/item/prop/changed/instantFeedback":"activity/item/prop/changed/instantFeedback",
+																"activity/item/prop/changed/savable":"activity/item/prop/changed/savable",
+																"activity/item/prop/changed/completed":"activity/item/prop/changed/completed",
+																"activity/submit/score" : "activity/submit/score",
+																"activity-container/nextActivity" :"activity-container/nextActivity",
+																"activity-container/resize" : "activity-container/resize",
+																"render/activity":"render/activity",
+																"tech-check/request":"tech-check/request",
+																"tracking/useraction" : "tracking/useraction"
+															}
+														}),
+														AjaxService(),
+														QueryService(cache),
+														Popcache(cache),
+														ConfigService(cache, sourceParams),
+														ContextService(),
+														LoadService(),
+														RouteWidget($(window), "route"),
+														RepublishService(),
+														LogWidget($(window)),
+														LogService(LogFilter(CCL_LOG_ENABLE, LogCommand())),
+														CampusService()
+													) // end of Application(...)
+													.start()
+													.then(function () {
+														$.each(callbacks, function (index, callback) {
+															callback.call(this);
+														});
+													});
+												}); // end of jQuery(...)
+
+											}); // end of localRequire
+
+										}); // end localRequire clientstate
+
+									}); // end localRequire jquery...
+									} // end of bootstrapApplication function
+							} // end requirejs config callback
+						});
+					}
+				};
+			})();
+		</script>
+
+		<!-- LIVE_CHAT_LOCAL_CONFIG -->
+
+		<script>
+      var liveChatConfig = window.liveChat;
+			if (liveChatConfig && liveChatConfig.enabled) {
+				var script = document.createElement('script')
+				script.type = 'text/javascript';
+				script.src = liveChatConfig.scriptUrl || 'https://c.la1-c1cs-lo3.salesforceliveagent.com/content/g/js/49.0/deployment.js';
+				document.getElementsByTagName('head')[0].appendChild(script);
+			}
+		</script>
+		<script type="text/javascript" src="./require.js"></script>
+    	<script src="./iframe.js"></script>
+  
+<div style="clear: both; display: block; height: 0px;"></div><div class="ets-at-assets" data-woven="school-ui-activity/shared/automation-test/main@1372"><input type="hidden" data-at-id="assets" value="[{&quot;_id&quot;:&quot;c_5&quot;,&quot;txt&quot;:&quot;university&quot;,&quot;pronsXML&quot;:&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;\n&lt;TPContext version=\&quot;1.1\&quot;&gt;&lt;Sentences&gt;&lt;Sentence AVG=\&quot;86.821774005998\&quot; DEV=\&quot;19.41022993116\&quot; id=\&quot;1\&quot; display_trans=\&quot;university\&quot; trans=\&quot;JINLO \&quot;&gt;&lt;Word id=\&quot;1\&quot; trans=\&quot;JINLO\&quot; display_trans=\&quot;UNIVERSITY\&quot; weight=\&quot;1\&quot;/&gt;&lt;/Sentence&gt;&lt;/Sentences&gt;&lt;NewWords&gt;&lt;NewWord id=\&quot;1\&quot; trans=\&quot;JINLO\&quot; prons=\&quot;Y UW N AH V ER S IH T IY\&quot;/&gt;&lt;/NewWords&gt;&lt;Dictionary&gt;&lt;![CDATA[JINLO  Y UW N AH V ER S AH T IY\nJINLO  Y UW N AH V ER S IH T IY\n]]&gt;&lt;/Dictionary&gt;&lt;/TPContext&gt;\n&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/11/83/7/v/11837/0B.5.2.2.1_University.jpg&quot;,&quot;id&quot;:&quot;media!11837&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161},&quot;audio&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/50/51/v/105051/GE_2.5.1.1.2_5_v2.mp3&quot;,&quot;id&quot;:&quot;media!105051&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161}},{&quot;_id&quot;:&quot;c_1&quot;,&quot;txt&quot;:&quot;museum&quot;,&quot;pronsXML&quot;:&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;\n&lt;TPContext version=\&quot;1.1\&quot;&gt;&lt;Sentences&gt;&lt;Sentence AVG=\&quot;87.366125696698\&quot; DEV=\&quot;19.683922906878\&quot; id=\&quot;1\&quot; display_trans=\&quot;museum\&quot; trans=\&quot;GBGLM \&quot;&gt;&lt;Word id=\&quot;1\&quot; trans=\&quot;GBGLM\&quot; display_trans=\&quot;MUSEUM\&quot; weight=\&quot;1\&quot;/&gt;&lt;/Sentence&gt;&lt;/Sentences&gt;&lt;NewWords&gt;&lt;NewWord id=\&quot;1\&quot; trans=\&quot;GBGLM\&quot; prons=\&quot;M Y UW Z IY AH M\&quot;/&gt;&lt;/NewWords&gt;&lt;Dictionary&gt;&lt;![CDATA[GBGLM  M Y UW Z IY AH M\n]]&gt;&lt;/Dictionary&gt;&lt;/TPContext&gt;\n&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/56/27/v/5627/5.7.1.2.2_art_museum.jpg&quot;,&quot;id&quot;:&quot;media!5627&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161},&quot;audio&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/50/47/v/105047/GE_2.5.1.1.2_1_v2.mp3&quot;,&quot;id&quot;:&quot;media!105047&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161}},{&quot;_id&quot;:&quot;c_6&quot;,&quot;txt&quot;:&quot;hospital&quot;,&quot;pronsXML&quot;:&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;\n&lt;TPContext version=\&quot;1.1\&quot;&gt;&lt;Sentences&gt;&lt;Sentence AVG=\&quot;86.623820184851\&quot; DEV=\&quot;19.710889607415\&quot; id=\&quot;1\&quot; display_trans=\&quot;hospital\&quot; trans=\&quot;NKEZK \&quot;&gt;&lt;Word id=\&quot;1\&quot; trans=\&quot;NKEZK\&quot; display_trans=\&quot;HOSPITAL\&quot; weight=\&quot;1\&quot;/&gt;&lt;/Sentence&gt;&lt;/Sentences&gt;&lt;NewWords&gt;&lt;NewWord id=\&quot;1\&quot; trans=\&quot;NKEZK\&quot; prons=\&quot;HH AA S P IH T AH L\&quot;/&gt;&lt;/NewWords&gt;&lt;Dictionary&gt;&lt;![CDATA[NKEZK  HH AA S P IH T AH L\n]]&gt;&lt;/Dictionary&gt;&lt;/TPContext&gt;\n&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/45/25/v/104525/GE_2.5.1.1.2_hospital.jpg&quot;,&quot;id&quot;:&quot;media!104525&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161},&quot;audio&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/50/48/v/105048/GE_2.5.1.1.2_2_v2.mp3&quot;,&quot;id&quot;:&quot;media!105048&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161}},{&quot;_id&quot;:&quot;c_8&quot;,&quot;txt&quot;:&quot;train station&quot;,&quot;pronsXML&quot;:&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;\n&lt;TPContext version=\&quot;1.1\&quot;&gt;&lt;Sentences&gt;&lt;Sentence AVG=\&quot;87.181187284683\&quot; DEV=\&quot;19.709326255117\&quot; id=\&quot;1\&quot; display_trans=\&quot;train station\&quot; trans=\&quot;NLSRJ TAUBG \&quot;&gt;&lt;Word id=\&quot;1\&quot; trans=\&quot;NLSRJ\&quot; display_trans=\&quot;TRAIN\&quot; weight=\&quot;1\&quot;/&gt;&lt;Word id=\&quot;2\&quot; trans=\&quot;TAUBG\&quot; display_trans=\&quot;STATION\&quot; weight=\&quot;1\&quot;/&gt;&lt;/Sentence&gt;&lt;/Sentences&gt;&lt;NewWords&gt;&lt;NewWord id=\&quot;1\&quot; trans=\&quot;NLSRJ\&quot; prons=\&quot;T R EY N\&quot;/&gt;&lt;NewWord id=\&quot;2\&quot; trans=\&quot;TAUBG\&quot; prons=\&quot;S T EY SH AH N\&quot;/&gt;&lt;/NewWords&gt;&lt;Dictionary&gt;&lt;![CDATA[NLSRJ  T R EY N\nTAUBG  S T EY SH AH N\n]]&gt;&lt;/Dictionary&gt;&lt;/TPContext&gt;\n&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/45/29/v/104529/GE_2.5.1.1.2_train_station.jpg&quot;,&quot;id&quot;:&quot;media!104529&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161},&quot;audio&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/50/54/v/105054/GE_2.5.1.1.2_8_v2.mp3&quot;,&quot;id&quot;:&quot;media!105054&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161}},{&quot;_id&quot;:&quot;c_7&quot;,&quot;txt&quot;:&quot;restaurant&quot;,&quot;pronsXML&quot;:&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;\n&lt;TPContext version=\&quot;1.1\&quot;&gt;&lt;Sentences&gt;&lt;Sentence AVG=\&quot;85.199607087338\&quot; DEV=\&quot;20.866917472556\&quot; id=\&quot;1\&quot; display_trans=\&quot;restaurant\&quot; trans=\&quot;SOBMB \&quot;&gt;&lt;Word id=\&quot;1\&quot; trans=\&quot;SOBMB\&quot; display_trans=\&quot;RESTAURANT\&quot; weight=\&quot;1\&quot;/&gt;&lt;/Sentence&gt;&lt;/Sentences&gt;&lt;NewWords&gt;&lt;NewWord id=\&quot;1\&quot; trans=\&quot;SOBMB\&quot; prons=\&quot;R EH S T AH R AA N T\&quot;/&gt;&lt;/NewWords&gt;&lt;Dictionary&gt;&lt;![CDATA[SOBMB  R EH S T AH R AA N T\nSOBMB  R EH S T ER AA N T\n]]&gt;&lt;/Dictionary&gt;&lt;/TPContext&gt;\n&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/45/27/v/104527/GE_2.5.1.1.2_restaurant_v1.jpg&quot;,&quot;id&quot;:&quot;media!104527&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161},&quot;audio&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/50/53/v/105053/GE_2.5.1.1.2_7_v2.mp3&quot;,&quot;id&quot;:&quot;media!105053&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161}},{&quot;_id&quot;:&quot;c_4&quot;,&quot;txt&quot;:&quot;library&quot;,&quot;pronsXML&quot;:&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;\n&lt;TPContext version=\&quot;1.1\&quot;&gt;&lt;Sentences&gt;&lt;Sentence AVG=\&quot;82.919434082686\&quot; DEV=\&quot;22.815358490641\&quot; id=\&quot;1\&quot; display_trans=\&quot;library\&quot; trans=\&quot;QOHLP \&quot;&gt;&lt;Word id=\&quot;1\&quot; trans=\&quot;QOHLP\&quot; display_trans=\&quot;LIBRARY\&quot; weight=\&quot;1\&quot;/&gt;&lt;/Sentence&gt;&lt;/Sentences&gt;&lt;NewWords&gt;&lt;NewWord id=\&quot;1\&quot; trans=\&quot;QOHLP\&quot; prons=\&quot;L AY B R EH R IY\&quot;/&gt;&lt;/NewWords&gt;&lt;Dictionary&gt;&lt;![CDATA[QOHLP  L AY B R EH R IY\n]]&gt;&lt;/Dictionary&gt;&lt;/TPContext&gt;\n&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/11/37/v/1137/1.4.3.2_library.jpg&quot;,&quot;id&quot;:&quot;media!1137&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161},&quot;audio&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/50/50/v/105050/GE_2.5.1.1.2_4_v2.mp3&quot;,&quot;id&quot;:&quot;media!105050&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161}},{&quot;_id&quot;:&quot;c_9&quot;,&quot;txt&quot;:&quot;swimming pool&quot;,&quot;pronsXML&quot;:&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;\n&lt;TPContext version=\&quot;1.1\&quot;&gt;&lt;Sentences&gt;&lt;Sentence AVG=\&quot;86.781924788485\&quot; DEV=\&quot;19.9570807196\&quot; id=\&quot;1\&quot; display_trans=\&quot;swimming pool\&quot; trans=\&quot;IWAJR WLZHS \&quot;&gt;&lt;Word id=\&quot;1\&quot; trans=\&quot;IWAJR\&quot; display_trans=\&quot;SWIMMING\&quot; weight=\&quot;1\&quot;/&gt;&lt;Word id=\&quot;2\&quot; trans=\&quot;WLZHS\&quot; display_trans=\&quot;POOL\&quot; weight=\&quot;1\&quot;/&gt;&lt;/Sentence&gt;&lt;/Sentences&gt;&lt;NewWords&gt;&lt;NewWord id=\&quot;1\&quot; trans=\&quot;IWAJR\&quot; prons=\&quot;S W IH M IH NG\&quot;/&gt;&lt;NewWord id=\&quot;2\&quot; trans=\&quot;WLZHS\&quot; prons=\&quot;P UW L\&quot;/&gt;&lt;/NewWords&gt;&lt;Dictionary&gt;&lt;![CDATA[IWAJR  S W IH M IH NG\nWLZHS  P UW L\n]]&gt;&lt;/Dictionary&gt;&lt;/TPContext&gt;\n&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/45/28/v/104528/GE_2.5.1.1.2_swimming_pool.jpg&quot;,&quot;id&quot;:&quot;media!104528&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161},&quot;audio&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/50/46/v/105046/GE_2.5.1.1.2_9_v2.mp3&quot;,&quot;id&quot;:&quot;media!105046&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161}},{&quot;_id&quot;:&quot;c_3&quot;,&quot;txt&quot;:&quot;park&quot;,&quot;pronsXML&quot;:&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;\n&lt;TPContext version=\&quot;1.1\&quot;&gt;&lt;Sentences&gt;&lt;Sentence AVG=\&quot;84.166228478056\&quot; DEV=\&quot;21.913130997329\&quot; id=\&quot;1\&quot; display_trans=\&quot;park\&quot; trans=\&quot;LYOSB \&quot;&gt;&lt;Word id=\&quot;1\&quot; trans=\&quot;LYOSB\&quot; display_trans=\&quot;PARK\&quot; weight=\&quot;1\&quot;/&gt;&lt;/Sentence&gt;&lt;/Sentences&gt;&lt;NewWords&gt;&lt;NewWord id=\&quot;1\&quot; trans=\&quot;LYOSB\&quot; prons=\&quot;P AA R K\&quot;/&gt;&lt;/NewWords&gt;&lt;Dictionary&gt;&lt;![CDATA[LYOSB  P AA R K\n]]&gt;&lt;/Dictionary&gt;&lt;/TPContext&gt;\n&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/45/26/v/104526/GE_2.5.1.1.2_park_v1.jpg&quot;,&quot;id&quot;:&quot;media!104526&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161},&quot;audio&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/50/52/v/105052/GE_2.5.1.1.2_6_v2.mp3&quot;,&quot;id&quot;:&quot;media!105052&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161}},{&quot;_id&quot;:&quot;c_2&quot;,&quot;txt&quot;:&quot;bank&quot;,&quot;pronsXML&quot;:&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;\n&lt;TPContext version=\&quot;1.1\&quot;&gt;&lt;Sentences&gt;&lt;Sentence AVG=\&quot;86.864940105691\&quot; DEV=\&quot;19.957055783147\&quot; id=\&quot;1\&quot; display_trans=\&quot;bank\&quot; trans=\&quot;ZWHRW \&quot;&gt;&lt;Word id=\&quot;1\&quot; trans=\&quot;ZWHRW\&quot; display_trans=\&quot;BANK\&quot; weight=\&quot;1\&quot;/&gt;&lt;/Sentence&gt;&lt;/Sentences&gt;&lt;NewWords&gt;&lt;NewWord id=\&quot;1\&quot; trans=\&quot;ZWHRW\&quot; prons=\&quot;B AE NG K\&quot;/&gt;&lt;/NewWords&gt;&lt;Dictionary&gt;&lt;![CDATA[ZWHRW  B AE NG K\n]]&gt;&lt;/Dictionary&gt;&lt;/TPContext&gt;\n&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/95/4/v/954/1.4.1.2.1_bank.jpg&quot;,&quot;id&quot;:&quot;media!954&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161},&quot;audio&quot;:{&quot;url&quot;:&quot;https://et2.ef-cdn.com/Juno/10/50/49/v/105049/GE_2.5.1.1.2_3_v2.mp3&quot;,&quot;id&quot;:&quot;media!105049&quot;,&quot;maxAge&quot;:3600,&quot;collapsed&quot;:false,&quot;indexed&quot;:1724954561,&quot;expires&quot;:1724958161}}]"></div></body></html>
